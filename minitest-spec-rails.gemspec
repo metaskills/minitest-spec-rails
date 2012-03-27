@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Ken Collins']
   s.email       = ['ken@metaskills.net']
   s.homepage    = 'http://github.com/metaskills/minitest-spec-rails'
-  s.summary     = 'Make Test::Unit::TestCase a subclass of of MiniTest::Spec.'
+  s.summary     = 'Drop in MiniTest::Spec support for Rails 3.'
   s.description = 'Force ActiveSupport::TestCase to subclass MiniTest::Spec for a drop in behavior change.'
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
