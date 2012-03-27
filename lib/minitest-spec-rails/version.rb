@@ -1,3 +1,3 @@
-module MiniSpecUnit
-  VERSION = "0.4.0"
+module MiniTestSpecRails
+  VERSION = "3.0.0"
 end

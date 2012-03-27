@@ -4,7 +4,7 @@ require "minitest-spec-rails/version"
 
 Gem::Specification.new do |s|
   s.name        = 'minitest-spec-rails'
-  s.version     = MiniSpecUnit::VERSION
+  s.version     = MiniTestSpecRails::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Ken Collins']
   s.email       = ['ken@metaskills.net']
