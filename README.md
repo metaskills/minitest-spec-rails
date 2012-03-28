@@ -1,7 +1,7 @@
 
 # MiniTest::Spec For Rails
 
-Make Test::Unit::TestCase a subclass of of MiniTest::Spec with this simple shim. Tricks ActiveSupport::TestCase to use MiniTest::Spec instead. Includes any monkey patches to make using MiniTest::Spec a drop in behavior change for any Rails 3 project. Full Details here:
+Make Test::Unit::TestCase a subclass of of MiniTest::Spec with this simple shim. Tricks ActiveSupport::TestCase to use MiniTest::Spec instead. Includes any monkey patches to make using MiniTest::Spec a drop in behavior change for any Rails 3.x project. Full Details here:
 
 http://metaskills.net/2011/03/26/using-minitest-spec-with-rails/
 
