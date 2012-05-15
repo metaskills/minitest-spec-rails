@@ -1,4 +1,9 @@
 
+## v3.0.2
+
+* Remove version deps on minitest since v3 is out. Should work with any v2/3 version.
+
+
 ## v3.0.1
 
 * Add rails to the gemspec.
