@@ -18,14 +18,7 @@ if defined?(ActionController::TestCase)
       end
     end
 
-    before do
-      @controller = self.class.name.match(/((.*)Controller)/)[1].constantize.new
-      @routes     = ::Rails.application.routes
-    end
-
-    subject do
-      @controller
-    end
+    before { setup_controller_request_and_response }
   end
 
   MiniTest::Spec.register_spec_type /Controller/, ActionController::TestCase
@@ -33,9 +26,7 @@ end
 
 if defined?(ActionDispatch::IntegrationTest)
   class ActionDispatch::IntegrationTest
-    before do
-      @app = ::Rails.application
-    end
+    before { self.app = Rails.application }
   end
 
   MiniTest::Spec.register_spec_type /Integration Test$/, ActionDispatch::IntegrationTest
