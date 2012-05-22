@@ -26,7 +26,7 @@ end
 
 if defined?(ActionDispatch::IntegrationTest)
   class ActionDispatch::IntegrationTest
-    before { self.app = Rails.application }
+    before { self.class.app = Rails.application }
   end
 
   MiniTest::Spec.register_spec_type /Integration Test$/, ActionDispatch::IntegrationTest
