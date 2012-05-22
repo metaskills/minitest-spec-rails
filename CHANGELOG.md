@@ -1,4 +1,9 @@
 
+## v3.0.3
+
+* Stronger test case organization where we properly setup functional and integraiton tests
+  while also allowing an alternate pure MiniTest::Spec outter file describe block. [Jack Chu]
+
 ## v3.0.2
 
 * Remove version deps on minitest since v3 is out. Should work with any v2/3 version.
