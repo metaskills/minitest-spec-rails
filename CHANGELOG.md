@@ -1,4 +1,9 @@
 
+## v3.0.5
+
+* Use ActionController::IntegrationTest vs. ActionDispatch::IntegrationTest
+
+
 ## v3.0.4
 
 * Use class app setter for integration tests.

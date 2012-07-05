@@ -24,10 +24,10 @@ if defined?(ActionController::TestCase)
   MiniTest::Spec.register_spec_type /Controller/, ActionController::TestCase
 end
 
-if defined?(ActionDispatch::IntegrationTest)
-  class ActionDispatch::IntegrationTest
+if defined?(ActionController::IntegrationTest)
+  class ActionController::IntegrationTest
     before { self.class.app = Rails.application }
   end
 
-  MiniTest::Spec.register_spec_type /Integration Test$/, ActionDispatch::IntegrationTest
+  MiniTest::Spec.register_spec_type /Integration Test$/, ActionController::IntegrationTest
 end
