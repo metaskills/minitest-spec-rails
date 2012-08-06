@@ -12,7 +12,7 @@ if defined?(ActionController::TestCase)
   class ActionController::TestCase
     def self.determine_default_controller_class(name)
       if name.match(/.*(?:^|::)(\w+Controller)/)
-        $1.safe_constantize
+        $1.constantize rescue nil
       else
         super(name)
       end

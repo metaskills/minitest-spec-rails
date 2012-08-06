@@ -1,4 +1,9 @@
 
+## v3.0.6
+
+* Use #constantize vs. #safe_constantize for Rails 3.0 compatability.
+
+
 ## v3.0.5
 
 * Use ActionController::IntegrationTest vs. ActionDispatch::IntegrationTest
