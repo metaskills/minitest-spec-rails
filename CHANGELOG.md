@@ -1,4 +1,9 @@
 
+## v3.0.7
+
+* Must use MiniTest version ~> 2.1. As 3.x will not work.
+
+
 ## v3.0.6
 
 * Use #constantize vs. #safe_constantize for Rails 3.0 compatability.
