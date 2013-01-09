@@ -3,3 +3,5 @@ module MiniTestSpecRails
     include ActionMailer::TestCase::Behavior
   end
 end
+
+MiniTest::Spec.register_spec_type(/Mailer$/, MiniTestSpecRails::Mailer)
