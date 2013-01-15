@@ -31,11 +31,11 @@ class ActionMailerTest < MiniTestSpecRails::TestCase
 
   private
 
-  def assert_mailer actual
+  def assert_mailer(actual)
     assert_equal ActionMailer::TestCase, actual
   end
 
-  def refute_mailer actual
+  def refute_mailer(actual)
     refute_equal ActionMailer::TestCase, actual
   end
 

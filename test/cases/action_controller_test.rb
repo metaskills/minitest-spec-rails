@@ -30,11 +30,11 @@ class ActionControllerTest < MiniTestSpecRails::TestCase
 
   private
 
-  def assert_controller actual
+  def assert_controller(actual)
     assert_equal ActionController::TestCase, actual
   end
 
-  def refute_controller actual
+  def refute_controller(actual)
     refute_equal ActionController::TestCase, actual
   end
 
