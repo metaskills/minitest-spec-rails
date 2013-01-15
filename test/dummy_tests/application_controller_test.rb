@@ -17,6 +17,10 @@ module ApplicationControllerTests
       self.class.controller_class.must_equal Dummy::ApplicationController
     end
 
+    it 'can access the setup ivars' do
+      @controller.must_be_kind_of Dummy::ApplicationController
+    end
+
     describe 'nested 1' do
 
       it('works') { skip }
