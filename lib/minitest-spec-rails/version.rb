@@ -1,3 +1,3 @@
 module MiniTestSpecRails
-  VERSION = "3.0.7"
+  VERSION = "4.3.0"
 end

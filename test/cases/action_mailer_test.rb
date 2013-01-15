@@ -1,0 +1,42 @@
+require 'test_helper'
+
+class NotificationMailer < ActionMailer::Base; end
+class Notifications < ActionMailer::Base; end
+
+class ActionMailerTest < MiniTestSpecRails::TestCase
+
+  it 'matches spec type for class constants' do
+    assert_mailer MiniTest::Spec.spec_type(NotificationMailer)
+    assert_mailer MiniTest::Spec.spec_type(Notifications)
+  end
+
+  it 'matches spec type for strings' do
+    assert_mailer MiniTest::Spec.spec_type("WidgetMailer")
+    assert_mailer MiniTest::Spec.spec_type("WidgetMailerTest")
+    assert_mailer MiniTest::Spec.spec_type("Widget Mailer Test")
+    # And is not case sensitive
+    assert_mailer MiniTest::Spec.spec_type("widgetmailer")
+    assert_mailer MiniTest::Spec.spec_type("widgetmailertest")
+    assert_mailer MiniTest::Spec.spec_type("widget mailer test")
+  end
+
+  it 'wont match spec type for non space characters' do
+    refute_mailer MiniTest::Spec.spec_type("Widget Mailer\tTest")
+    refute_mailer MiniTest::Spec.spec_type("Widget Mailer\rTest")
+    refute_mailer MiniTest::Spec.spec_type("Widget Mailer\nTest")
+    refute_mailer MiniTest::Spec.spec_type("Widget Mailer\fTest")
+    refute_mailer MiniTest::Spec.spec_type("Widget MailerXTest")
+  end
+
+
+  private
+
+  def assert_mailer actual
+    assert_equal ActionMailer::TestCase, actual
+  end
+
+  def refute_mailer actual
+    refute_equal ActionMailer::TestCase, actual
+  end
+
+end

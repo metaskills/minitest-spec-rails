@@ -1,4 +1,10 @@
 
+## v4.3.0
+
+* Track MiniTest's major/minior version number.
+* Remove alternate MiniTest::Spec Describe support.
+
+
 ## v3.0.7
 
 * Must use MiniTest version ~> 2.1. As 3.x will not work.
