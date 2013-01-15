@@ -10,20 +10,28 @@ module ApplicationControllerTests
     end
 
     it 'allows custom assertions' do
-      assert_blank ''
+      assert_template :partial => false
     end
 
-    # describe 'nested 1' do
+    it 'can find the controller_class' do
+      self.class.controller_class.must_equal Dummy::ApplicationController
+    end
 
-    #   it('works') { skip }
+    describe 'nested 1' do
 
-    #   describe 'nested 2' do
+      it('works') { skip }
 
-    #     it('works') { skip }
+      it 'can find the controller_class' do
+        self.class.controller_class.must_equal Dummy::ApplicationController
+      end
 
-    #   end
+      describe 'nested 2' do
 
-    # end
+        it('works') { skip }
+
+      end
+
+    end
     
   end
 end
