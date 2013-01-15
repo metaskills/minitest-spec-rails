@@ -13,6 +13,7 @@ module Dummy
     config.root = File.join __FILE__, '..'
     config.cache_store = :memory_store
     config.assets.enabled = false
+    config.secret_token = '012345678901234567890123456789'
 
     config.cache_classes = true
     config.whiny_nils = true
