@@ -1,4 +1,4 @@
-# MiniTest::Spec For Rails
+# MiniTest::Spec For Rails 3 or 4.
 
 This gem makes it easy to use the MiniTest Spec DSL within your existing Rails 3 or 4 application tests.
 
