@@ -2,6 +2,8 @@
 
 This gem makes it easy to use the MiniTest Spec DSL within your existing Rails 3 or 4 application tests.
 
+[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
+
 
 ## Advantages
 
@@ -59,6 +61,8 @@ If you want to run the tests for a specific Rails version, use `rake -T` for a l
 ```shell
 $ bundle exec rake appraisal:rails32 test
 ```
+
+[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
 
 
 ## Issues
