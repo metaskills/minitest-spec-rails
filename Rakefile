@@ -9,6 +9,8 @@ Rake::TestTask.new   do |t|
   t.verbose = true
 end
 
+task :default => :test
+
 desc "Setup Appraisal."
 task 'appraisal:setup' do
   Rake::Task['appraisal:cleanup'].invoke

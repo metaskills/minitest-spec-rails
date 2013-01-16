@@ -5,7 +5,3 @@ gemfile:
   - gemfiles/rails30.gemfile
   - gemfiles/rails31.gemfile
   - gemfiles/rails32.gemfile
-before_script:
-  - bundle exec rake appraisal:install
-script:
-  - bundle exec rake test
