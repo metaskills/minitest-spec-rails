@@ -3,7 +3,7 @@ module MiniTestSpecRails
     
     config.minitest_spec_rails = ActiveSupport::OrderedOptions.new
     
-    config.before_initialize do |app|
+    config.before_initialize do |app| 
       ActiveSupport.on_load(:action_view)       { require 'minitest-spec-rails/init/action_view' }
       ActiveSupport.on_load(:action_controller) { require 'minitest-spec-rails/init/action_controller' }
       ActiveSupport.on_load(:action_mailer)     { require 'minitest-spec-rails/init/action_mailer' }

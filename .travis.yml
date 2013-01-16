@@ -5,3 +5,8 @@ gemfile:
   - gemfiles/rails30.gemfile
   - gemfiles/rails31.gemfile
   - gemfiles/rails32.gemfile
+  - gemfiles/rails40.gemfile
+matrix:
+  exclude:
+    - rvm: 1.8.7
+      gemfile: gemfiles/rails40.gemfile

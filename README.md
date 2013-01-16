@@ -52,7 +52,7 @@ After cloning the repository. Running the following commands will install all th
 
 ```shell
 $ bundle install
-$ bundle exec rake appraisal:install
+$ bundle exec rake appraisal:setup
 $ bundle exec rake appraisal test
 ```
 

@@ -13,11 +13,9 @@ module MiniTestSpecRails
 
     def setup_dummy_schema
       ActiveRecord::Base.class_eval do
-        silence do
-          connection.instance_eval do
-            create_table :users, :force => true do |t|
-              t.string :email
-            end
+        connection.instance_eval do
+          create_table :users, :force => true do |t|
+            t.string :email
           end
         end
       end
@@ -27,6 +25,7 @@ module MiniTestSpecRails
       Rails.version.split('.')[0,2].join('.')
     end
 
+    def rails3? ; rails30? || rails31? || rails32? ; end
     def rails30? ; rails_version == '3.0' ; end
     def rails31? ; rails_version == '3.1' ; end
     def rails32? ; rails_version == '3.2' ; end

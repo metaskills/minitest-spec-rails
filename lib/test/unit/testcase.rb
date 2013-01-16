@@ -27,3 +27,5 @@ module Test
     
   end
 end
+
+silence_warnings { MiniTest::Unit::TestCase = MiniTest::Spec }
