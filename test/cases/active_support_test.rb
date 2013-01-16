@@ -10,7 +10,7 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
 
   it 'resolves spect type for active record constants' do
     assert_support MiniTest::Spec.spec_type(SomeRandomModel)
-    assert_support MiniTest::Spec.spec_type(Dummy::User)
+    assert_support MiniTest::Spec.spec_type(User)
   end
 
   it 'wont resolve spect type for random strings' do

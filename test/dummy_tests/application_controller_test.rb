@@ -14,11 +14,11 @@ module ApplicationControllerTests
     end
 
     it 'can find the controller_class' do
-      self.class.controller_class.must_equal Dummy::ApplicationController
+      self.class.controller_class.must_equal ApplicationController
     end
 
     it 'can access the setup ivars' do
-      @controller.must_be_kind_of Dummy::ApplicationController
+      @controller.must_be_kind_of ApplicationController
     end
 
     describe 'nested 1' do
@@ -26,7 +26,7 @@ module ApplicationControllerTests
       it('works') { skip }
 
       it 'can find the controller_class' do
-        self.class.controller_class.must_equal Dummy::ApplicationController
+        self.class.controller_class.must_equal ApplicationController unless rails30?
       end
 
       describe 'nested 2' do
@@ -40,10 +40,10 @@ module ApplicationControllerTests
   end
 end
 
-class Dummy::ApplicationControllerTest < ActionController::TestCase
+class ApplicationControllerTest < ActionController::TestCase
   include ApplicationControllerTests
 end
 
-describe Dummy::ApplicationController do
+describe ApplicationController do
   include ApplicationControllerTests
 end

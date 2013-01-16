@@ -34,6 +34,6 @@ module IntegrationTests
   end
 end
 
-class Dummy::IntegrationTest < ActionDispatch::IntegrationTest
+class IntegrationTest < ActionDispatch::IntegrationTest
   include IntegrationTests
 end

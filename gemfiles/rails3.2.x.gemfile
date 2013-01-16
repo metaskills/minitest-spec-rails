@@ -1,4 +1,0 @@
-eval File.read('gemfiles/common.gemfile')
-
-gem 'rails', '~> 3.2.0'
-

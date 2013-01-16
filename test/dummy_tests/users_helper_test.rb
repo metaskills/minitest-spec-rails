@@ -4,7 +4,7 @@ module UsersHelperTests
   extend ActiveSupport::Concern
   included do
 
-    let(:users_list) { render_users_list Dummy::User.all }
+    let(:users_list) { render_users_list User.all }
 
     before { user_ken }
 
@@ -14,7 +14,7 @@ module UsersHelperTests
     end
 
     it 'can find the helper_class' do
-      self.class.helper_class.must_equal Dummy::UsersHelper
+      self.class.helper_class.must_equal UsersHelper
     end
 
     describe 'nested 1' do
@@ -22,7 +22,7 @@ module UsersHelperTests
       it('works') { skip }
 
       it 'can find the helper_class' do
-        self.class.helper_class.must_equal Dummy::UsersHelper
+        self.class.helper_class.must_equal UsersHelper
       end
 
       describe 'nested 2' do
@@ -36,10 +36,10 @@ module UsersHelperTests
   end
 end
 
-class Dummy::UsersHelperTest < ActionView::TestCase
+class UsersHelperTest < ActionView::TestCase
   include UsersHelperTests
 end
 
-describe Dummy::UsersHelper do
+describe UsersHelper do
   include UsersHelperTests
 end

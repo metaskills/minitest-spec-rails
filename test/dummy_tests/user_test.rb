@@ -5,7 +5,7 @@ module UserTests
   included do
 
     it 'works' do
-      user_ken.must_be_instance_of Dummy::User
+      user_ken.must_be_instance_of User
     end
 
     it 'allows custom assertions' do
@@ -27,10 +27,10 @@ module UserTests
   end
 end
 
-class Dummy::UserTest < ActiveSupport::TestCase
+class UserTest < ActiveSupport::TestCase
   include UserTests
 end
 
-describe Dummy::User do
+describe User do
   include UserTests
 end

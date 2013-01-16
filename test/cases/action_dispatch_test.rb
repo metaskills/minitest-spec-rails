@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Dummy::ModelsController < Dummy::ApplicationController;  end
+class ModelsController < ApplicationController;  end
 
 class ActionControllerTest < MiniTestSpecRails::TestCase
 

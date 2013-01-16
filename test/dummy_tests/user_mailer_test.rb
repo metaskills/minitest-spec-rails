@@ -5,7 +5,7 @@ module UserMailerTests
   included do
 
     let(:deliveries)        { ActionMailer::Base.deliveries }
-    let(:user_mailer_class) { Dummy::UserMailer }
+    let(:user_mailer_class) { UserMailer }
     let(:user_email)        { user_mailer_class.welcome(user_ken).deliver }
 
     it 'works' do
@@ -30,7 +30,7 @@ module UserMailerTests
       it('works') { skip }
 
       it 'can find the mailer_class' do
-        self.class.mailer_class.must_equal user_mailer_class
+        self.class.mailer_class.must_equal user_mailer_class unless rails30?
       end
 
       describe 'nested 2' do
@@ -44,10 +44,10 @@ module UserMailerTests
   end
 end
 
-class Dummy::UserMailerTest < ActionMailer::TestCase
+class UserMailerTest < ActionMailer::TestCase
   include UserMailerTests
 end
 
-describe Dummy::UserMailer do
+describe UserMailer do
   include UserMailerTests
 end

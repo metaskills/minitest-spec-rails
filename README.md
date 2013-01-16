@@ -34,14 +34,35 @@ MiniTest::Spec Style:
 foo.must_equal 100
 ```
 
-There are a few missing assertions available in Test::Unit that are changed or no longer available in MiniTest.
+## Gotchas
 
-  * The method `assert_raise` is renamed `assert_raises`.
-  * There is no method `assert_nothing_raised`. There are good reasons for this on [Ryan's blog entry](http://blog.zenspider.com/blog/2012/01/assert_nothing_tested.html).
+If you are upgrading from Test::Unit, there are a few missing assertions that are changed or no longer available in MiniTest.
+
+* The method `assert_raise` is renamed `assert_raises`.
+* There is no method `assert_nothing_raised`. There are good reasons for this on [Ryan's blog entry](http://blog.zenspider.com/blog/2012/01/assert_nothing_tested.html).
+
+If you are using minitest-spec-rails with Rails 3.0, then your controller or mailer tests will need to use the `tests` interface for the test to be setup correct within sub `describe` blocks. I think this is a bug with `class_attribute` within Rails 3.0. Rails 3.1 and higher does not exhibit this problem.
+
+
+## Testing
+
+After cloning the repository. Running the following commands will install all the dependencies and run tests for each appraisal gemfile and Rails version.
+
+```shell
+$ bundle install
+$ bundle exec rake appraisal:install
+$ bundle exec rake appraisal test
+```
+
+If you want to run the tests for a specific Rails version, use `rake -T` for a list. For example, the following command will run the tests for Rails 3.2 only.
+
+```shell
+$ bundle exec rake appraisal:rails32 test
+```
 
 
 ## Issues
 
-If there are any issues using this in Rails 3 outside the normal few assertions that change from Test::Unit to MiniTest::Unit, please open an issue here on github.
+If there are any issues past the gotchas mentioned above, please open an issue here on github.
 
 

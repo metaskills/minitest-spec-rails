@@ -6,16 +6,16 @@ module UsersControllerTests
 
     it 'works' do
       get :index
-      assert_select 'h1', "All #{Dummy::User.count} Users"
+      assert_select 'h1', "All #{User.count} Users"
     end
     
   end
 end
 
-class Dummy::UsersControllerTest < ActionController::TestCase
+class UsersControllerTest < ActionController::TestCase
   include UsersControllerTests
 end
 
-describe Dummy::UsersController do
+describe UsersController do
   include UsersControllerTests
 end

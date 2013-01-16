@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class Dummy::ModelsController < Dummy::ApplicationController;  end
+class ModelsController < ApplicationController;  end
 
 class ActionControllerTest < MiniTestSpecRails::TestCase
 
   it 'matches spec type for class constants' do
-    assert_controller MiniTest::Spec.spec_type(Dummy::ApplicationController)
-    assert_controller MiniTest::Spec.spec_type(Dummy::ModelsController)
+    assert_controller MiniTest::Spec.spec_type(ApplicationController)
+    assert_controller MiniTest::Spec.spec_type(ModelsController)
   end
 
   it 'matches spec type for strings' do
