@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default from: 'rails@minitest.spec'
+  default :from => 'rails@minitest.spec'
 
   def welcome(user)
     @user = user
