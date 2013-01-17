@@ -69,4 +69,3 @@ $ bundle exec rake appraisal:rails32 test
 
 If there are any issues past the gotchas mentioned above, please open an issue here on github.
 
-
