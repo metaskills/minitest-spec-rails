@@ -1,4 +1,9 @@
 
+## v4.3.3
+
+* Fix MiniTest::Unit::TestCase hack for Rails 4, ignore in Rails 3.
+
+
 ## v4.3.2
 
 * Way better support for controller_class, mailer_class, and helper_class reflection.

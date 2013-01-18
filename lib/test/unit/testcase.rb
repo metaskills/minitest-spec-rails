@@ -54,4 +54,4 @@ module Test
   end
 end
 
-silence_warnings { MiniTest::Unit::TestCase = Test::Unit::TestCase }
+silence_warnings { MiniTest::Unit::TestCase = Test::Unit::TestCase } unless MiniTestSpecRails::Util.rails3?
