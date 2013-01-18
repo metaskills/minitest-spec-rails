@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.authors     = ['Ken Collins']
   gem.email       = ['ken@metaskills.net']
   gem.homepage    = 'http://github.com/metaskills/minitest-spec-rails'
-  gem.summary     = 'Drop in MiniTest::Spec support for Rails 3 or 4.'
-  gem.description = 'Force ActiveSupport::TestCase to subclass MiniTest::Spec for a drop in behavior change.'
+  gem.summary     = 'Make Rails Use MiniTest::Spec!'
+  gem.description = 'The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 3 or 4 test suite.'
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

@@ -1,8 +1,8 @@
 
 ## v4.3.0
 
+* All new MiniTest::Spec for Rails!!! Tested to the hilt!!!
 * Track MiniTest's major/minior version number.
-* Remove alternate MiniTest::Spec Describe support.
 
 
 ## v3.0.7
