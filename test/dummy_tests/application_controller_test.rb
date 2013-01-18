@@ -46,8 +46,43 @@ end
 
 class ApplicationControllerTest < ActionController::TestCase
   include ApplicationControllerTests
+  it 'reflects' do
+    self.class.spec_type(self.class).must_equal ActionController::TestCase
+    describing_class.must_equal ApplicationControllerTest
+    described_class.must_equal ApplicationController
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      self.class.spec_type(self.class).must_equal ActionController::TestCase
+      describing_class.must_equal ApplicationControllerTest
+      described_class.must_equal  ApplicationController
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        self.class.spec_type(self.class).must_equal ActionController::TestCase
+        describing_class.must_equal ApplicationControllerTest
+        described_class.must_equal  ApplicationController
+      end
+    end
+  end
 end
 
 describe ApplicationController do
   include ApplicationControllerTests
+  it 'reflects' do
+    self.class.spec_type(self.class).must_equal ActionController::TestCase
+    described_class.must_equal ApplicationController
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      self.class.spec_type(self.class).must_equal ActionController::TestCase
+      described_class.must_equal ApplicationController
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        self.class.spec_type(self.class).must_equal ActionController::TestCase
+        described_class.must_equal ApplicationController
+      end
+    end
+  end
 end

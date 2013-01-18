@@ -1,11 +1,25 @@
-ActionMailer::TestCase.instance_eval do
+module MiniTestSpecRails
+  module Init
+    module ActionMailerBehavior
 
-  register_spec_type(self) do |desc|
-    Class === desc && desc < ActionMailer::Base
+      extend ActiveSupport::Concern
+
+      included do
+        register_spec_type(self) { |desc| Class === desc && desc < ActionMailer::Base }
+        register_spec_type(/Mailer( ?Test)?\z/i, self)
+        register_spec_type(self) { |desc| Class === desc && desc < self }
+        before { setup_minitest_spec_rails_mailer_class }
+      end
+
+      private
+
+      def setup_minitest_spec_rails_mailer_class
+        describing_class.tests described_class
+      end
+
+    end
   end
-
-  register_spec_type(/Mailer( ?Test)?\z/i, self)
-
-  before { self.class.mailer_class unless MiniTestSpecRails::Util.rails30? }
-
 end
+
+ActionMailer::TestCase.send :include, MiniTestSpecRails::Init::ActionMailerBehavior
+

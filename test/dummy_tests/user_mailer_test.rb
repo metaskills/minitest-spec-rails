@@ -48,8 +48,43 @@ end
 
 class UserMailerTest < ActionMailer::TestCase
   include UserMailerTests
+  it 'reflects' do
+    self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+    describing_class.must_equal UserMailerTest
+    described_class.must_equal UserMailer
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+      describing_class.must_equal UserMailerTest
+      described_class.must_equal  UserMailer
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+        describing_class.must_equal UserMailerTest
+        described_class.must_equal  UserMailer
+      end
+    end
+  end
 end
 
 describe UserMailer do
   include UserMailerTests
+  it 'reflects' do
+    self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+    described_class.must_equal UserMailer
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+      described_class.must_equal UserMailer
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        self.class.spec_type(self.class).must_equal ActionMailer::TestCase
+        described_class.must_equal UserMailer
+      end
+    end
+  end
 end

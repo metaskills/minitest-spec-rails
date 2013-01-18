@@ -1,21 +1,36 @@
-ActionView::TestCase.instance_eval do
+module MiniTestSpecRails
+  module Init
+    module ActionViewBehavior
 
-  register_spec_type(/(Helper|View)( ?Test)?\z/i, self)
+      extend ActiveSupport::Concern
 
-  # Properly allow the parent class to memoize this for subclasses.
-  # Just like ActionController::TestCase does.
-  class_attribute :_helper_class
-  def helper_class=(new_class)
-    self._helper_class = new_class
-  end
-  def helper_class
-    if current_helper_class = self._helper_class
-      current_helper_class
-    else
-      self.helper_class = determine_default_helper_class(name)
+      included do
+        class_attribute :_helper_class
+        register_spec_type(/(Helper|View)( ?Test)?\z/i, self)
+        register_spec_type(self) { |desc| Class === desc && desc < self }
+        before { setup_minitest_spec_rails_helper_class }
+      end
+
+      private
+
+      def helper_class=(new_class)
+        self._helper_class = new_class
+      end
+      
+      def helper_class
+        if current_helper_class = self._helper_class
+          current_helper_class
+        else
+          self.helper_class = determine_default_helper_class(name)
+        end
+      end
+
+      def setup_minitest_spec_rails_helper_class
+        self.class.helper_class = described_class
+      end
+
     end
   end
-
-  before { self.class.helper_class }
-
 end
+
+ActionView::TestCase.send :include, MiniTestSpecRails::Init::ActionViewBehavior

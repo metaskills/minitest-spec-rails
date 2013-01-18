@@ -1,4 +1,9 @@
 
+## v4.3.2
+
+* Way better support for controller_class, mailer_class, and helper_class reflection.
+
+
 ## v4.3.1
 
 * Eager load controller_class, mailer_class, and helper_class.

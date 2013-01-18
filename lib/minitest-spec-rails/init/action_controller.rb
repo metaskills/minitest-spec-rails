@@ -1,18 +1,24 @@
-ActionController::TestCase.instance_eval do
+module MiniTestSpecRails
+  module Init
+    module ActionControllerBehavior
 
-  register_spec_type(self) do |desc|
-    Class === desc && desc < ActionController::Metal
+      extend ActiveSupport::Concern
+
+      included do
+        register_spec_type(self) { |desc| Class === desc && desc < ActionController::Metal }
+        register_spec_type(/Controller( ?Test)?\z/i, self)
+        register_spec_type(self) { |desc| Class === desc && desc < self }
+      end
+
+      private
+
+      def setup_controller_request_and_response
+        describing_class.tests described_class
+        super
+      end
+
+    end
   end
-
-  register_spec_type(/Controller( ?Test)?\z/i, self)
-
-  before { self.class.controller_class }
-
 end
 
-require 'action_dispatch/testing/integration' # For Rails 3.0 loading.
-ActionDispatch::IntegrationTest.instance_eval do
-
-  register_spec_type(/(Acceptance|Integration) ?Test\z/i, self)
-
-end
+ActionController::TestCase.send :include, MiniTestSpecRails::Init::ActionControllerBehavior
