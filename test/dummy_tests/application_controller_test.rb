@@ -4,6 +4,10 @@ module ApplicationControllerTests
   extend ActiveSupport::Concern
   included do
 
+    tests ApplicationController if MiniTestSpecRails::Util.rails30?
+
+    before { get :index }
+
     it 'works' do
       get :index
       response.body.must_equal 'Rendered MiniTest::Spec'
@@ -26,7 +30,7 @@ module ApplicationControllerTests
       it('works') { skip }
 
       it 'can find the controller_class' do
-        self.class.controller_class.must_equal ApplicationController unless rails30?
+        self.class.controller_class.must_equal ApplicationController
       end
 
       describe 'nested 2' do

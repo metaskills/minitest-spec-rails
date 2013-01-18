@@ -6,6 +6,8 @@ ActionController::TestCase.instance_eval do
 
   register_spec_type(/Controller( ?Test)?\z/i, self)
 
+  before { self.class.controller_class }
+
 end
 
 require 'action_dispatch/testing/integration' # For Rails 3.0 loading.

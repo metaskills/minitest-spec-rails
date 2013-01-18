@@ -4,8 +4,9 @@ module UsersControllerTests
   extend ActiveSupport::Concern
   included do
 
-    it 'works' do
-      get :index
+    before { get :index }
+
+    it 'works' do  
       assert_select 'h1', "All #{User.count} Users"
     end
     

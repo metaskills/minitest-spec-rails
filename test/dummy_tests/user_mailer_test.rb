@@ -4,6 +4,8 @@ module UserMailerTests
   extend ActiveSupport::Concern
   included do
 
+    tests UserMailer if MiniTestSpecRails::Util.rails30?
+
     let(:deliveries)        { ActionMailer::Base.deliveries }
     let(:user_mailer_class) { UserMailer }
     let(:user_email)        { user_mailer_class.welcome(user_ken).deliver }
@@ -30,7 +32,7 @@ module UserMailerTests
       it('works') { skip }
 
       it 'can find the mailer_class' do
-        self.class.mailer_class.must_equal user_mailer_class unless rails30?
+        self.class.mailer_class.must_equal user_mailer_class
       end
 
       describe 'nested 2' do

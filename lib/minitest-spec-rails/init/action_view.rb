@@ -16,5 +16,6 @@ ActionView::TestCase.instance_eval do
     end
   end
 
+  before { self.class.helper_class }
 
 end

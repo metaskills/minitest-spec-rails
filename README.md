@@ -88,18 +88,33 @@ end
 
 ## Gotchas
 
+### Assertion Methods
+
 If you are upgrading from Test::Unit, there are a few missing assertions that have been renamed or are no longer available within MiniTest.
 
 * The method `assert_raise` is renamed `assert_raises`.
 * There is no method `assert_nothing_raised`. There are good reasons for this on [Ryan's blog entry](http://blog.zenspider.com/blog/2012/01/assert_nothing_tested.html).
 
-If you are using minitest-spec-rails with Rails 3.0, then your controller or mailer tests will need to use the `tests` interface for the test to be setup correct within sub `describe` blocks. I think this is a bug with `class_attribute` within Rails 3.0. Rails 3.1 and higher does not exhibit this problem.
+### Mocha
 
 If you are using [Mocha](https://github.com/freerange/mocha) for mocking and stubbing, please update to the latest, 0.13.1 or higher so it is compatible with the latest MiniTest. If you do not like the deprecation warnings in older versions of Rails, just add this below the `require 'rails/all'` within your `application.rb` file :)
 
 ```ruby
 require 'mocha/deprecation'
 Mocha::Deprecation.mode = :disabled
+```
+
+### Rails 3.0.x
+
+If you are using minitest-spec-rails with Rails 3.0, then your controller and mailer tests will need to use the `tests` interface for the assertions to be setup correctly within sub `describe` blocks. I think this is a bug with `class_attribute` within Rails 3.0 only. So use the following patterns.
+
+```ruby
+class UsersControllerTest < ActionController::TestCase
+  tests UsersController
+end
+class UserMailerTest < ActionMailer::TestCase
+  tests UserMailer
+end
 ```
 
 

@@ -1,4 +1,9 @@
 
+## v4.3.1
+
+* Eager load controller_class, mailer_class, and helper_class.
+
+
 ## v4.3.0
 
 * All new MiniTest::Spec for Rails!!! Tested to the hilt!!!

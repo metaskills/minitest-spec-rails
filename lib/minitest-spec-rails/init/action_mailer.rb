@@ -6,4 +6,6 @@ ActionMailer::TestCase.instance_eval do
 
   register_spec_type(/Mailer( ?Test)?\z/i, self)
 
+  before { self.class.mailer_class unless MiniTestSpecRails::Util.rails30? }
+
 end
