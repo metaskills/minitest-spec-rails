@@ -1,4 +1,9 @@
 
+## v4.3.4
+
+* Add mini_should support and talk about matchers.
+
+
 ## v4.3.3
 
 * Fix MiniTest::Unit::TestCase hack for Rails 4, ignore in Rails 3.
