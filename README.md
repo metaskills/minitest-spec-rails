@@ -153,6 +153,41 @@ assert_does_not_contain a, b  # From
 a.wont_include b              # To
 ```
 
+### Matchers
+
+If matchers are your thing, I recommend the [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem. For example:
+
+```ruby
+# Basic minitest-matchers features.
+describe Post do
+  include ValidAttribute::Method
+  it "must have validations" do
+    post = Post.new
+    post.must have_valid(:title).when("Good")
+    post.wont have_valid(:title).when("")
+  end
+end
+
+# Using an implicit subject.
+describe Post do
+  subject { Post.new }
+  it { must have_valid(:title).when("Hello") }
+  it { wont have_valid(:title).when("", nil, "Bad") }
+end
+```
+
+Want more? Try out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
+
+```ruby
+describe User do
+  subject { User.new }
+  it { must have_valid(:email).when('test@test.com', 'test+spam@gmail.com') }
+  it { wont have_valid(:email).when('fail', 123) }
+  it { must have_valid(:name).when('TestName') }
+  it { wont have_valid(:name).when('Test') }
+end
+```
+
 
 ## Gotchas
 
