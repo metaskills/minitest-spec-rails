@@ -16,7 +16,15 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 
 Existing or new Rails 3 or 4 applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MinitTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
-This gem uses no generators and does not require you to write your tests in a new directory or file structure. It is completely different than [minitest-rails](https://github.com/blowmage/minitest-rails) which is setup more like RSpec in the way it bolts on the side of Rails. The goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec. Eventually that day will come and if it does, all your tests will still work! So bundle up and get started!
+### How is this different than MiniTest::Rails?
+
+To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE MiniTest::Spec. Both projects aim to advocate MiniTest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?
+
+  * We aim to leverage existing Rails test directories and files!
+  * No special test helper and/or generators.
+  * Easy migration path for existing Rails applications.
+
+So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
 
 ```ruby
 gem 'minitest-spec-rails'
@@ -35,7 +43,7 @@ assert_equal 100, foo
 foo.must_equal 100
 ```
 
-All existing Rails test cases that subclass ActiveSupport::TestCase will continue to work and I personally suggest that you  still use what I call the subclass convention vs the outer describe test case convention. However either will work.
+All existing Rails test cases that subclass ActiveSupport::TestCase will continue to work and I personally suggest that you still **use the subclass convention** vs the outer describe test case convention. However either will work.
 
 ```ruby
 require 'test_helper'
