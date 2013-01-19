@@ -8,11 +8,13 @@ Bundler.require :default, :development, :test
 module Dummy
   class Application < ::Rails::Application 
 
+    # Basic Engine
     config.root = File.join __FILE__, '..'
     config.cache_store = :memory_store
     config.assets.enabled = false if Rails.version > '3.1'
     config.secret_token = '012345678901234567890123456789'
 
+    # Mimic Test Environment Config.
     config.whiny_nils = true if Rails.version < '4.0'
     config.consider_all_requests_local = true
     config.action_controller.perform_caching = false
@@ -30,6 +32,9 @@ module Dummy
       config.eager_load = true
       config.secret_key_base = '012345678901234567890123456789'
     end
+
+    # Custom
+    config.minitest_spec_rails.mini_shoulda = true
     
   end
 end

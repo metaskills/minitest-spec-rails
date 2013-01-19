@@ -110,11 +110,47 @@ class UserTest < ActiveSupport::TestCase
     described_class # => User(id: integer, email: string)
   end
   describe 'and' do
-    it 'here too' do
+    it 'works here too' do
       described_class # => User(id: integer, email: string)
     end
   end
 end
+```
+
+### mini_shoulda
+
+If you are migrating away from Shoulda, then minitest-spec-rails' mini_shoulda feature will help. To enable it, set the following configuration in your test environment file.
+
+```ruby
+# In config/environments/test.rb
+config.minitest_spec_rails.mini_shoulda = true
+```
+
+Doing so only enables a few aliases that allow the Shoulda `context`, `should`, and `should_eventually` methods. The following code demonstrates the full features of the mini_shoulda implementation. It basically replaces the shell of [should-context](https://github.com/thoughtbot/shoulda-context) in a few lines of code.
+
+```ruby
+class PostTests < ActiveSupport::TestCase
+  setup    { @post = Post.create! :title => 'Test Title', :body => 'Test body' }
+  teardown { Post.delete_all }
+  should 'work' do
+    @post.must_be_instance_of Post
+  end
+  context 'with a user' do
+    should_eventually 'have a user' do
+      # ...
+    end
+  end
+end
+```
+
+If you are in the assertions provided by shoulda-context like `assert_same_elements`, then you may want to consider copying them [from here](https://github.com/thoughtbot/shoulda-context/blob/master/lib/shoulda/context/assertions.rb) and including them in `MiniTest::Spec` yourself. I personally recommend just replacing these assertions with something more modern. A few examples are below.
+
+```ruby
+assert_same_elements a, b  # From
+a.sort.must_equal b.sort   # To
+
+assert_does_not_contain a, b  # From
+a.wont_include b              # To
 ```
 
 
