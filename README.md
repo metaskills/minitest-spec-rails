@@ -23,6 +23,7 @@ To start off both Mike Moore (@blowmage) and I have worked together and we both 
   * We aim to leverage existing Rails test directories and files!
   * No special test helper and/or generators.
   * Easy migration path for existing Rails applications.
+  * How we go about freedom patching Rails.
 
 So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
 
@@ -95,6 +96,28 @@ end
 ```
 
 
+## Extras
+
+We have baked in a few extra methods behind the scenes to minitest-spec-rails. Most directly support our needs to reflect on described classes, however, they may be useful to you too when meta-programming on top of minitest-spec-rails.
+
+### #described_class
+The `described_class` method is available both via a class method and an instance method in any Rails test case. It is guaranteed to work despite the described level too. This allows class level macros to be build, much like Shoulda. Remember, it can only do this if you follow Rails naming conventions for your tests.
+
+```ruby
+class UserTest < ActiveSupport::TestCase
+  described_class # => User(id: integer, email: string)
+  it 'works here' do
+    described_class # => User(id: integer, email: string)
+  end
+  describe 'and' do
+    it 'here too' do
+      described_class # => User(id: integer, email: string)
+    end
+  end
+end
+```
+
+
 ## Gotchas
 
 ### Assertion Methods
@@ -144,6 +167,5 @@ $ bundle exec rake appraisal:rails32 test
 ```
 
 Our current build status is:
-
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
 
