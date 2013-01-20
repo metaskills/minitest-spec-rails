@@ -1,5 +1,4 @@
 require 'minitest-spec-rails'
-require 'minitest/autorun'
 require 'pp'
 
 module Test

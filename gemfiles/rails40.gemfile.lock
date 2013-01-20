@@ -43,7 +43,7 @@ GIT
 PATH
   remote: /Users/kencollins/Repositories/minitest-spec-rails
   specs:
-    minitest-spec-rails (4.3.5)
+    minitest-spec-rails (4.3.6)
       minitest (~> 4.3)
       rails (>= 3.0)
 

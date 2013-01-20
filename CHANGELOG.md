@@ -1,4 +1,9 @@
 
+## v4.3.6
+
+* Only require the freedom patches and autorun when Rails.env.test?
+
+
 ## v4.3.5
 
 * Make sure #described_class works in ActiveSupport::TestCase class level.
