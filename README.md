@@ -155,7 +155,7 @@ a.wont_include b              # To
 
 ### Matchers
 
-I highly suggest that you stay away from matchers. MiniTest::Spec yields alone gives you all the tools you need to write good tests. Doing so will make your code's tests live longer as matchers are a slippery slope. So stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are your thing, I recommend the [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
+**I highly suggest that you stay away from matchers** since MiniTest::Spec gives you all the tools you need to write good tests. Staying away from matchers will make your code's tests live longer. So my advice is to stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are really your thing, I recommend the [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
 
 ```ruby
 describe Post do
