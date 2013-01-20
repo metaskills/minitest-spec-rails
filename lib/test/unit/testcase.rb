@@ -29,8 +29,19 @@ module Test
 
       # MiniTestSpecRails Additions
 
+      RAILS_TEST_CASES = []
+
+      def self.rails_test_cases
+        RAILS_TEST_CASES
+      end
+
+      def self.register_rails_test_case(test_case)
+        return if RAILS_TEST_CASES.include?(test_case)
+        RAILS_TEST_CASES.unshift(test_case)
+      end
+
       def self.describing_class
-        ancestors.detect { |a| Class === a && a.superclass == spec_type(self) }
+        ancestors.detect { |a| Class === a && rails_test_cases.include?(a.superclass) }
       end
 
       def describing_class

@@ -1,4 +1,9 @@
 
+## v4.3.5
+
+* Make sure #described_class works in ActiveSupport::TestCase class level.
+
+
 ## v4.3.4
 
 * Add mini_should support and talk about matchers.

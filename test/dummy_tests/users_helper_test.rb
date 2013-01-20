@@ -39,21 +39,21 @@ end
 class UsersHelperTest < ActionView::TestCase
   include UsersHelperTests
   it 'reflects' do
-    self.class.spec_type(self.class).must_equal ActionView::TestCase
     describing_class.must_equal UsersHelperTest
     described_class.must_equal UsersHelper
+    self.class.described_class.must_equal UsersHelper
   end
   describe 'level 1' do
     it 'reflects' do
-      self.class.spec_type(self.class).must_equal ActionView::TestCase
       describing_class.must_equal UsersHelperTest
       described_class.must_equal  UsersHelper
+      self.class.described_class.must_equal UsersHelper
     end
     describe 'level 2' do
       it 'reflects' do
-        self.class.spec_type(self.class).must_equal ActionView::TestCase
         describing_class.must_equal UsersHelperTest
         described_class.must_equal  UsersHelper
+        self.class.described_class.must_equal UsersHelper
       end
     end
   end
@@ -62,18 +62,18 @@ end
 describe UsersHelper do
   include UsersHelperTests
   it 'reflects' do
-    self.class.spec_type(self.class).must_equal ActionView::TestCase
     described_class.must_equal UsersHelper
+    self.class.described_class.must_equal UsersHelper
   end
   describe 'level 1' do
     it 'reflects' do
-      self.class.spec_type(self.class).must_equal ActionView::TestCase
       described_class.must_equal UsersHelper
+      self.class.described_class.must_equal UsersHelper
     end
     describe 'level 2' do
       it 'reflects' do
-        self.class.spec_type(self.class).must_equal ActionView::TestCase
         described_class.must_equal UsersHelper
+        self.class.described_class.must_equal UsersHelper
       end
     end
   end

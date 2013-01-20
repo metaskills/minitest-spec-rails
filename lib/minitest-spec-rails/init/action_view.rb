@@ -8,6 +8,7 @@ module MiniTestSpecRails
         class_attribute :_helper_class
         register_spec_type(/(Helper|View)( ?Test)?\z/i, self)
         register_spec_type(self) { |desc| Class === desc && desc < self }
+        register_rails_test_case self
         before { setup_minitest_spec_rails_helper_class }
       end
 

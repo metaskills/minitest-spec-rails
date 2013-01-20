@@ -29,8 +29,43 @@ end
 
 class UserTest < ActiveSupport::TestCase
   include UserTests
+  it 'reflects' do
+    describing_class.must_equal UserTest
+    described_class.must_equal User
+    self.class.described_class.must_equal User
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      describing_class.must_equal UserTest
+      described_class.must_equal  User
+      self.class.described_class.must_equal User
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        describing_class.must_equal UserTest
+        described_class.must_equal  User
+        self.class.described_class.must_equal User
+      end
+    end
+  end
 end
 
 describe User do
   include UserTests
+  it 'reflects' do
+    described_class.must_equal User
+    self.class.described_class.must_equal User
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      described_class.must_equal User
+      self.class.described_class.must_equal User
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        described_class.must_equal User
+        self.class.described_class.must_equal User
+      end
+    end
+  end
 end
