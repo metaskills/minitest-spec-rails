@@ -8,6 +8,7 @@ Rails 4 was on its way to using MiniTest::Spec as the superclass for ActiveSuppo
 
 The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 3 or 4 test suite. It does this by forcing ActiveSupport::TestCase to subclass MiniTest::Spec.
 
+[![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.png)](http://badge.fury.io/rb/minitest-spec-rails)
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/metaskills/minitest-spec-rails)
 
