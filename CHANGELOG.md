@@ -1,4 +1,9 @@
 
+## v4.3.7
+
+* Fix helper test bug where calling methods in first context block blew up. Fixes #13.
+
+
 ## v4.3.6
 
 * Only require the freedom patches and autorun when Rails.env.test?

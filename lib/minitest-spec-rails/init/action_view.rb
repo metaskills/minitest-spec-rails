@@ -28,6 +28,7 @@ module MiniTestSpecRails
 
       def setup_minitest_spec_rails_helper_class
         self.class.helper_class = described_class
+        self.class.send :include_helper_modules!
       end
 
     end
