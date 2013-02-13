@@ -1,4 +1,9 @@
 
+## 4.3.8
+
+* Less coupling to ActiveRecord ORM, works for MongoDB now. Thanks @kimsuelim
+
+
 ## v4.3.7
 
 * Fix helper test bug where calling methods in first context block blew up. Fixes #13.
