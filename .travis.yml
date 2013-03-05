@@ -7,6 +7,8 @@ gemfile:
   - gemfiles/rails31.gemfile
   - gemfiles/rails32.gemfile
   - gemfiles/rails40.gemfile
+before_script:
+  - gem install bundler
 matrix:
   exclude:
     - rvm: 1.8.7
