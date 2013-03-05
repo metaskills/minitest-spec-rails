@@ -12,6 +12,6 @@ appraise 'rails32' do
 end
 
 appraise 'rails40' do
-  gem 'rails', :github => 'rails/rails'
+  gem 'rails', '~> 4.0.0.beta'
 end
 
