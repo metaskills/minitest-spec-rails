@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler/gem_tasks'
 require 'rake/testtask'
-require 'appraisal'
 
 Rake::TestTask.new   do |t|
   t.libs = ['lib','test']
@@ -10,10 +9,3 @@ Rake::TestTask.new   do |t|
 end
 
 task :default => :test
-
-desc "Setup Appraisal."
-task 'appraisal:setup' do
-  Rake::Task['appraisal:cleanup'].invoke
-  Rake::Task['appraisal:gemfiles'].invoke
-  Rake::Task['appraisal:install'].invoke
-end

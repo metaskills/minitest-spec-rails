@@ -4,7 +4,7 @@ module UserMailerTests
   extend ActiveSupport::Concern
   included do
 
-    tests UserMailer if MiniTestSpecRails::Util.rails30?
+    tests UserMailer
 
     let(:deliveries)        { ActionMailer::Base.deliveries }
     let(:user_mailer_class) { UserMailer }
