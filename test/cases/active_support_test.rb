@@ -4,10 +4,6 @@ class SomeRandomModel < ActiveRecord::Base; end
 
 class ActiveSupportTest < MiniTestSpecRails::TestCase
 
-  it 'removes ActiveSupport describe method' do
-    ActiveSupport::TestCase.singleton_methods(false).map(&:to_sym).wont_include :describe
-  end
-
   it 'resolves spect type for active record constants' do
     assert_support MiniTest::Spec.spec_type(SomeRandomModel)
     assert_support MiniTest::Spec.spec_type(User)
@@ -16,7 +12,6 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
   it 'wont resolve spect type for random strings' do
     assert_spec MiniTest::Spec.spec_type("Unmatched String")
   end
-
 
   private
 
@@ -28,4 +23,21 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
     assert_equal MiniTest::Spec, actual
   end
 
+end
+
+class ActiveSupportCallbackTest < ActiveSupport::TestCase
+ 
+  setup :foo
+  setup :bar
+ 
+  it 'works' do
+    @foo.must_equal 'foo'
+    @bar.must_equal 'bar'
+  end
+ 
+  private
+ 
+  def foo ; @foo = 'foo' ; end
+  def bar ; @bar = 'bar' ; end
+ 
 end

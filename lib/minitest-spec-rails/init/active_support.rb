@@ -5,7 +5,9 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
-        singleton_class.send :remove_method, :describe
+        singleton_class.class_eval { remove_method :describe }
+        extend MiniTest::Spec::DSL
+        include MiniTestSpecRails::DSL
         register_spec_type(self) { |desc| Class === desc && desc < ActiveRecord::Base if defined?(ActiveRecord::Base) }
         register_rails_test_case self
       end
@@ -15,6 +17,7 @@ module MiniTestSpecRails
 end
 
 ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::ActiveSupportBehavior
+
 
 # The AbstractController::Helpers#default_helper_module! blows up using
 # ActiveSupport's modified LoadError class under Ruby 1.8 because describe

@@ -15,10 +15,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.require_paths = ['lib']
-  gem.add_runtime_dependency     'minitest', '~> 4.3'
+  gem.add_runtime_dependency     'minitest', '4.6.3.beta1'
   gem.add_runtime_dependency     'rails',    '>= 3.0'
   gem.add_development_dependency 'appraisal'
+  gem.add_development_dependency 'guard-minitest'
   gem.add_development_dependency 'minitest-emoji'
+  gem.add_development_dependency 'minitest-focus'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'sqlite3'
 end

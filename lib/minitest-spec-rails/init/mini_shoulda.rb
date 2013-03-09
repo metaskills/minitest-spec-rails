@@ -6,8 +6,8 @@ module MiniTestSpecRails
 
       included do
         class << self
-          alias :should  :it
-          alias :context :describe
+          alias :context  :describe
+          alias :should   :it
         end
         extend ClassMethods
       end
@@ -24,4 +24,4 @@ module MiniTestSpecRails
   end
 end
 
-MiniTest::Spec.send :include, MiniTestSpecRails::Init::MiniShouldaBehavior
+ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::MiniShouldaBehavior
