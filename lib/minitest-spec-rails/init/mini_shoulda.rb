@@ -2,14 +2,14 @@ module MiniTestSpecRails
   module Init
     module MiniShouldaBehavior
 
-      extend ActiveSupport::Concern
-
-      included do
-        class << self
-          alias :context  :describe
-          alias :should   :it
+      def self.included(klass)
+        klass.class_eval do
+          class << self
+            alias :context  :describe
+            alias :should   :it
+          end
+          extend ClassMethods
         end
-        extend ClassMethods
       end
 
       module ClassMethods
