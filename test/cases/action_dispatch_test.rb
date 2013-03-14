@@ -38,11 +38,11 @@ class ActionControllerTest < MiniTestSpecRails::TestCase
   private
 
   def assert_dispatch(actual)
-    assert_equal ActionDispatch::IntegrationTest, actual
+    assert_equal ActionController::IntegrationTest, actual
   end
 
   def refute_dispatch(actual)
-    refute_equal ActionDispatch::IntegrationTest, actual
+    refute_equal ActionController::IntegrationTest, actual
   end
 
 end

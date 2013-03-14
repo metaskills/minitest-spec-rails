@@ -1,0 +1,72 @@
+require 'test_helper_dummy'
+
+module UserTests
+  def self.included(klass)
+    klass.class_eval do
+
+      it 'works' do
+        user_ken.must_be_instance_of User
+      end
+
+      it 'allows custom assertions' do
+        assert_blank ''
+      end
+
+      describe 'nested 1' do
+
+        it('works') { skip }
+
+        describe 'nested 2' do
+
+          it('works') { skip }
+
+        end
+
+      end
+  
+    end
+  end
+end
+
+class UserTest < ActiveSupport::TestCase
+  include UserTests
+  it 'reflects' do
+    describing_class.must_equal UserTest
+    described_class.must_equal User
+    self.class.described_class.must_equal User
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      describing_class.must_equal UserTest
+      described_class.must_equal  User
+      self.class.described_class.must_equal User
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        describing_class.must_equal UserTest
+        described_class.must_equal  User
+        self.class.described_class.must_equal User
+      end
+    end
+  end
+end
+
+describe User do
+  include UserTests
+  it 'reflects' do
+    described_class.must_equal User
+    self.class.described_class.must_equal User
+  end
+  describe 'level 1' do
+    it 'reflects' do
+      described_class.must_equal User
+      self.class.described_class.must_equal User
+    end
+    describe 'level 2' do
+      it 'reflects' do
+        described_class.must_equal User
+        self.class.described_class.must_equal User
+      end
+    end
+  end
+end

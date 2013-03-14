@@ -2,11 +2,8 @@ module MiniTestSpecRails
   module Init
     module ActionControllerBehavior
 
-      extend ActiveSupport::Concern
-
       def self.included(klass)
         klass.class_eval do
-          register_spec_type(self) { |desc| Class === desc && desc < ActionController::Metal }
           register_spec_type(/Controller( ?Test)?\z/i, self)
           register_spec_type(self) { |desc| Class === desc && desc < self }
           register_rails_test_case self

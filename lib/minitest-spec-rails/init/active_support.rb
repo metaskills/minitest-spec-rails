@@ -4,7 +4,6 @@ module MiniTestSpecRails
 
       def self.included(klass)
         klass.class_eval do
-          singleton_class.class_eval { remove_method :describe }
           extend MiniTest::Spec::DSL
           include MiniTestSpecRails::DSL
           register_spec_type(self) { |desc| Class === desc && desc < ActiveRecord::Base if defined?(ActiveRecord::Base) }
@@ -26,4 +25,4 @@ ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::ActiveSupportBeh
 # and hence wont find a #path match in REGEXPS due to the space. So add
 # another that allows filenames with spaces in it.
 #
-LoadError::REGEXPS << %r{^Missing \w+ (?:file\s*)?(.*\.rb)$}i
+MissingSourceFile::REGEXPS << %r{^Missing \w+ (?:file\s*)?(.*\.rb)$}i

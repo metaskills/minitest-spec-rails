@@ -7,7 +7,7 @@ module MiniTestSpecRails
       klass.extend ClassMethods
     end
 
-    module ClassMethods
+    module ClassMethods  
 
       def before(type = nil, &block)
         setup { self.instance_eval(&block) }
