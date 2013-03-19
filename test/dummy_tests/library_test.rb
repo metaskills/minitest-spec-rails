@@ -1,5 +1,5 @@
 require 'test_helper_dummy'
-require_relative '../dummy_app/lib/library'
+require File.expand_path('../../dummy_app/lib/library', __FILE__)
 
 class LibraryTest < ActiveSupport::TestCase
   it 'reflects' do
