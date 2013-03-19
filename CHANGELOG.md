@@ -1,4 +1,9 @@
 
+## 4.7.0
+
+* Use Minitest::Spec::DSL provided by Minitest 4.7.
+
+
 ## 4.3.8
 
 * Less coupling to ActiveRecord ORM, works for MongoDB now. Thanks @kimsuelim
