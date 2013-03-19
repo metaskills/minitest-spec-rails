@@ -1,48 +1,12 @@
 
-## 4.3.8
+## v3.1.1
 
-* Less coupling to ActiveRecord ORM, works for MongoDB now. Thanks @kimsuelim
-
-
-## v4.3.7
-
-* Fix helper test bug where calling methods in first context block blew up. Fixes #13.
+* Only use a TU shim for Ruby 1.8. See README for info.
 
 
-## v4.3.6
+## v3.1.0
 
-* Only require the freedom patches and autorun when Rails.env.test?
-
-
-## v4.3.5
-
-* Make sure #described_class works in ActiveSupport::TestCase class level.
-
-
-## v4.3.4
-
-* Add mini_should support and talk about matchers.
-
-
-## v4.3.3
-
-* Fix MiniTest::Unit::TestCase hack for Rails 4, ignore in Rails 3.
-
-
-## v4.3.2
-
-* Way better support for controller_class, mailer_class, and helper_class reflection.
-
-
-## v4.3.1
-
-* Eager load controller_class, mailer_class, and helper_class.
-
-
-## v4.3.0
-
-* All new MiniTest::Spec for Rails!!! Tested to the hilt!!!
-* Track MiniTest's major/minior version number.
+* Reborn and back! Fully supports Rails 2.3.
 
 
 ## v3.0.7

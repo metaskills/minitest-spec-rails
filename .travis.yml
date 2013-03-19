@@ -5,3 +5,5 @@ before_install:
   - gem update --system 1.8.25
   - gem install bundler
   - bundle --version
+before_script:
+  - bundle install
