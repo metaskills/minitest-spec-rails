@@ -34,6 +34,17 @@ group :test do
 end
 ```
 
+#### Ruby 1.8 Users!!!
+
+If you are using Ruby 1.8, you must install a Test::Unit shim that subclasses MiniTest::Unit, just as Ruby 1.9 does. We have kindly packed up Ruby 1.9's `lib/test` directory in the [minitest-spec-rails-tu-shim](https://github.com/metaskills/minitest-spec-rails-tu-shim) gem. So just add this to your Gemfile.
+
+```ruby
+group :test do
+  gem 'minitest-spec-rails-tu-shim'
+end
+```
+
+
 ### How is this different than MiniTest::Rails?
 
 To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE MiniTest::Spec. Both projects aim to advocate MiniTest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?

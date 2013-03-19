@@ -4,10 +4,14 @@ module UsersControllerTests
   extend ActiveSupport::Concern
   included do
 
-    before { get :index }
-
     it 'works' do  
+      get :index
       assert_select 'h1', "All #{User.count} Users"
+    end
+
+    it 'redirects' do
+      put :update, :id => 0
+      assert_redirected_to users_url
     end
     
   end

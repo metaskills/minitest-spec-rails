@@ -17,7 +17,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.add_runtime_dependency     'minitest', '~> 4.7'
   gem.add_runtime_dependency     'rails', '>= 3.0'
-  gem.add_runtime_dependency     'minitest_tu_shim', '~> 1.3.2'
   gem.add_development_dependency 'appraisal'
   gem.add_development_dependency 'guard-minitest'
   gem.add_development_dependency 'minitest-emoji'
