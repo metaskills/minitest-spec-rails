@@ -4,9 +4,7 @@
 # Make Rails Use MiniTest::Spec!
 
 
-Rails 4 was on its way to using MiniTest::Spec as the superclass for ActiveSupport::TestCase. But in one of many reversals, the work was [pulled by this commit](http://github.com/rails/rails/commit/b22c527e65a41da59dbfcb078968069c6fae5086). DHH says that [Rails is omakase](http://david.heinemeierhansson.com/2012/rails-is-omakase.html) and I am cool with that. But since Ruby is wide open for us to change it and we are free in DHH's words to "freedom patch" what we see fit, we can fix Rails.
-
-The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 3 or 4 test suite. It does this by forcing ActiveSupport::TestCase to subclass MiniTest::Spec.
+The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
 
 [![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.png)](http://badge.fury.io/rb/minitest-spec-rails)
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
@@ -15,7 +13,26 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 
 ## Usage
 
-Existing or new Rails 3 or 4 applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MinitTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
+Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MinitTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
+
+
+#### For Rails 3 or 4
+
+```ruby
+group :test do
+  gem 'minitest-spec-rails'
+end
+```
+
+#### For Rails 2.3
+
+Our [2-3-stable](https://github.com/metaskills/minitest-spec-rails/tree/2-3-stable) branch tracks our 3.1 version number and is guaranteed to work on any Rails 2.3 version. Since Rails 2.3 does not have a configurable Railtie, we have enabled the [mini-shoulda](#mini_shoulda) option all the time. This means that if you are on Rails 2.3 under either Ruby 1.8 or 1.9, perhaps using Shoulda, you have a solid upgrade path! Get your tests running with minitest-spec-rails first and nothing in you test stack changes along the way!
+
+```ruby
+group :test do
+  gem 'minitest-spec-rails', '~> 3.1'
+end
+```
 
 ### How is this different than MiniTest::Rails?
 
