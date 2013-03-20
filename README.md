@@ -53,6 +53,8 @@ To start off both Mike Moore (@blowmage) and I have worked together and we both 
   * No special test helper and/or generators.
   * Easy migration path for existing Rails applications.
   * How we go about freedom patching Rails.
+  * Fully support Ruby 1.8.7 with all legacy Test::Unit behavior.
+  * Compatability with ActiveSupport::TestCase's setup and teardowns.
 
 So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
 
@@ -143,6 +145,31 @@ class UserTest < ActiveSupport::TestCase
       described_class # => User(id: integer, email: string)
     end
   end
+end
+```
+
+### Setup & Teardown Compatability
+
+Rails ActiveSupport::TestCase allows multiple setup and teardown methods per class. It also allows you to specify these either with a symbol or a block. Unlike normal ActiveSupport setup and teardown callbacks, our blocks are evaluated in the scope of the instance, just like before and after. So this just works!
+
+```ruby
+class ActiveSupportCallbackTest < ActiveSupport::TestCase
+ 
+  setup :foo
+  setup :bar
+  before { @bat = 'biz' }
+ 
+  it 'works' do
+    @foo.must_equal 'foo'
+    @bar.must_equal 'bar'
+    @bat.must_equal 'biz'
+  end
+ 
+  private
+ 
+  def foo ; @foo = 'foo' ; end
+  def bar ; @bar = 'bar' ; end
+ 
 end
 ```
 
