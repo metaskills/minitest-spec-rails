@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     render :layout => false
   end
 
+  def update
+    redirect_to users_url
+  end
+
 end

@@ -1,4 +1,9 @@
 
+## v3.1.2
+
+* Register non ActiveRecord::Base classes correctly. Thanks @mptre.
+
+
 ## v3.1.1
 
 * Only use a TU shim for Ruby 1.8. See README for info.

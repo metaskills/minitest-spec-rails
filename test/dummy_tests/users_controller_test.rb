@@ -9,6 +9,11 @@ module UsersControllerTests
       it 'works' do  
         assert_select 'h1', "All #{User.count} Users"
       end
+
+      it 'redirects' do
+        put :update, :id => 0
+        assert_redirected_to users_url
+      end
     
     end
   end
