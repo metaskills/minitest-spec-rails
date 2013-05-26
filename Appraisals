@@ -1,16 +1,4 @@
 
-appraise 'rails30' do
-  gem 'rails', '~> 3.0.0'
-end
-
-appraise 'rails31' do
-  gem 'rails', '~> 3.1.0'
-end
-
-appraise 'rails32' do
-  gem 'rails', '~> 3.2.0'
-end
-
-appraise 'rails40' do
-  gem 'rails', '~> 4.0.0.beta'
-end unless RUBY_VERSION == '1.8.7'
+# appraise 'rails41' do
+#   gem 'rails', '~> 4.1'
+# end

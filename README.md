@@ -16,7 +16,14 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MinitTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
 
-#### For Rails 3 or 4
+#### Rails 4.1
+
+Our master branch is tracking rails master which is active development for Rails 4.1 which uses minitest 5.0.
+
+
+#### For Rails 3.x or 4.0
+
+Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stable) branch is meant for both Rails 3.x or 4.0 specifically. This version usest the latest 4.x series of minitest.
 
 ```ruby
 group :test do
@@ -256,7 +263,7 @@ end
 
 ## Contributing
 
-The minitest-spec-rails gem is fully tested from Rails 3.0 to 4 and upward. We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails) in both Ruby 1.8 and 1.9. If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite. 
+We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails). If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite. 
 
 ```shell
 $ bundle install
@@ -264,17 +271,17 @@ $ bundle exec rake appraisal:setup
 $ bundle exec rake appraisal test
 ```
 
-We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `rake -T` for a list. For example, the following command will run the tests for Rails 3.2 only.
+We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `rake -T` for a list. For example, the following command will run the tests for Rails 4.1 only.
 
 ```shell
-$ bundle exec rake appraisal:rails32 test
+$ bundle exec rake appraisal:rails41 test
 ```
 
 We have a few branches for each major Rails version.
 
-* 2-3-stable - Tracks Rails 2.3.x
-* 3-x-stable - Tracks Railx 3.x
-* master - Tracks Rails 4.x
+* [2-3-stable](https://github.com/metaskills/minitest-spec-rails/tree/2-3-stable) - Tracks Rails 2.3.x with MiniTest 4.x.
+* [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stable) - Oddly tracks Rails 3.x and 4.0 with MiniTest 4.x.
+* master - Currently tracks Rails 4.1 which uses Minitest 5.0.
 
 Our current build status is:
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
