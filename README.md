@@ -270,6 +270,12 @@ We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thought
 $ bundle exec rake appraisal:rails32 test
 ```
 
+We have a few branches for each major Rails version.
+
+* 2-3-stable - Tracks Rails 2.3.x
+* 3-x-stable - Tracks Railx 3.x
+* master - Tracks Rails 4.x
+
 Our current build status is:
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
 
