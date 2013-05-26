@@ -4,7 +4,7 @@ class ModelsController < ApplicationController;  end
 
 class ActionControllerTest < MiniTestSpecRails::TestCase
 
-  it 'resolves spect type for matching acceptance strings' do
+  it 'resolves spec type for matching acceptance strings' do
    assert_dispatch MiniTest::Spec.spec_type("WidgetAcceptanceTest")
    assert_dispatch MiniTest::Spec.spec_type("Widget Acceptance Test")
    assert_dispatch MiniTest::Spec.spec_type("widgetacceptancetest")

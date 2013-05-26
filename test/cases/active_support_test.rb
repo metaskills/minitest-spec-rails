@@ -4,12 +4,12 @@ class SomeRandomModel < ActiveRecord::Base; end
 
 class ActiveSupportTest < MiniTestSpecRails::TestCase
 
-  it 'resolves spect type for active record constants' do
+  it 'resolves spec type for active record constants' do
     assert_support MiniTest::Spec.spec_type(SomeRandomModel)
     assert_support MiniTest::Spec.spec_type(User)
   end
 
-  it 'wont resolve spect type for random strings' do
+  it 'wont resolve spec type for random strings' do
     assert_spec MiniTest::Spec.spec_type("Unmatched String")
   end
 
