@@ -16,21 +16,11 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MinitTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
 
-#### For Rails 3 or 4
+#### For Rails 3.x
 
 ```ruby
 group :test do
   gem 'minitest-spec-rails'
-end
-```
-
-#### For Rails 2.3
-
-Our [2-3-stable](https://github.com/metaskills/minitest-spec-rails/tree/2-3-stable) branch tracks our 3.1 version number and is guaranteed to work on any Rails 2.3 version. Since Rails 2.3 does not have a configurable Railtie, we have enabled the [mini-shoulda](#mini_shoulda) option all the time. This means that if you are on Rails 2.3 under either Ruby 1.8 or 1.9, perhaps using Shoulda, you have a solid upgrade path! Get your tests running with minitest-spec-rails first and nothing in you test stack changes along the way!
-
-```ruby
-group :test do
-  gem 'minitest-spec-rails', '~> 3.1'
 end
 ```
 
@@ -256,7 +246,7 @@ end
 
 ## Contributing
 
-The minitest-spec-rails gem is fully tested from Rails 3.0 to 4 and upward. We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails) in both Ruby 1.8 and 1.9. If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite. 
+The minitest-spec-rails gem is fully tested for minor Rails 3.x versions. We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails) in both Ruby 1.8 and 1.9. If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite. 
 
 ```shell
 $ bundle install
@@ -269,12 +259,6 @@ We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thought
 ```shell
 $ bundle exec rake appraisal:rails32 test
 ```
-
-We have a few branches for each major Rails version.
-
-* 2-3-stable - Tracks Rails 2.3.x
-* 3-x-stable - Tracks Railx 3.x
-* master - Tracks Rails 4.x
 
 Our current build status is:
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
