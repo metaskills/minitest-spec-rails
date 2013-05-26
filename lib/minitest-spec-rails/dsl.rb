@@ -5,6 +5,7 @@ module MiniTestSpecRails
 
     def self.included(klass)
       klass.extend ClassMethods
+      remove_method :test if method_defined?(:test)
     end
 
     module ClassMethods
@@ -15,6 +16,10 @@ module MiniTestSpecRails
 
       def after(type = nil, &block)
         teardown { self.instance_eval(&block) }
+      end
+
+      def test(name, &block)
+        it { self.instance_eval(&block) }
       end
 
       def rails_test_cases

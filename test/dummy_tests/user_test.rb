@@ -8,6 +8,10 @@ module UserTests
       user_ken.must_be_instance_of User
     end
 
+    test 'works with test' do
+      user_ken.must_be_instance_of User
+    end
+
     it 'allows custom assertions' do
       assert_blank '' if MiniTestSpecRails::Util.rails3?
     end
@@ -20,6 +24,10 @@ module UserTests
 
         it('works') { skip }
 
+      end
+
+      test 'works with test' do
+        user_ken.must_be_instance_of User
       end
 
     end
