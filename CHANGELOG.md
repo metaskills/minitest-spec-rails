@@ -1,4 +1,9 @@
 
+## 4.7.3
+
+* Allow using ActiveSupport's Declarative#test as an alias to it. Thanks @ysbaddaden. Fixes #23.
+
+
 ## 4.7.2
 
 * Register non ActiveRecord::Base classes correctly. Thanks @mptre.
