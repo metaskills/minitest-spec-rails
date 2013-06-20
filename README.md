@@ -260,6 +260,10 @@ class UserMailerTest < ActionMailer::TestCase
 end
 ```
 
+### Rails 3.1 & 3.2
+
+If your view helper tests give you an eror like this: `RuntimeError: In order to use #url_for, you must include routing helpers explicitly.`, this is something that is broken only for Rails 3.1 and 3.2, both 3.0 and 4.0 and above do not exhibit this error. I have heard that if you `include Rails.application.routes.url_helpers` in your tests or inject them into the helper module before the test it may work. Lemme know what you find out.
+
 
 ## Contributing
 
