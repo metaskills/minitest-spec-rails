@@ -12,5 +12,5 @@ appraise 'rails32' do
 end
 
 appraise 'rails40' do
-  gem 'rails', '~> 4.0.0.rc1'
+  gem 'rails', '~> 4.0.0.rc2'
 end

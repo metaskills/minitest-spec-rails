@@ -2,6 +2,13 @@ require 'test_helper_dummy'
 
 class FoosHelperTest < ActionView::TestCase
 
+  it 'allows path and url helpers' do
+    if MiniTestSpecRails::Util.rails30? || MiniTestSpecRails::Util.rails40?
+      users_path_helper.must_equal '/users'
+      users_url_helper.must_equal  'http://test.host/users'
+    end
+  end
+
   describe 'level1' do
     it 'works for helper method called in describe block' do
       assert passes
