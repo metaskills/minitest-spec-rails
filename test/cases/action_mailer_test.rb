@@ -14,10 +14,10 @@ class ActionMailerTest < MiniTestSpecRails::TestCase
     assert_mailer MiniTest::Spec.spec_type("WidgetMailer")
     assert_mailer MiniTest::Spec.spec_type("WidgetMailerTest")
     assert_mailer MiniTest::Spec.spec_type("Widget Mailer Test")
-    # And is not case sensitive
-    assert_mailer MiniTest::Spec.spec_type("widgetmailer")
-    assert_mailer MiniTest::Spec.spec_type("widgetmailertest")
-    assert_mailer MiniTest::Spec.spec_type("widget mailer test")
+    # And is case sensitive
+    refute_mailer MiniTest::Spec.spec_type("widgetmailer")
+    refute_mailer MiniTest::Spec.spec_type("widgetmailertest")
+    refute_mailer MiniTest::Spec.spec_type("widget mailer test")
   end
 
   it 'wont match spec type for non space characters' do
