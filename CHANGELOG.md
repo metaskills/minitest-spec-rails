@@ -1,4 +1,9 @@
 
+## 4.7.4
+
+* Enforces case sensitivity on registered spec types. Fixes #26.
+
+
 ## 4.7.3
 
 * Allow using ActiveSupport's Declarative#test as an alias to it. Thanks @ysbaddaden. Fixes #23.
