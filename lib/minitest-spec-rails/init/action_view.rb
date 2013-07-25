@@ -6,7 +6,7 @@ module MiniTestSpecRails
 
       included do
         class_attribute :_helper_class
-        register_spec_type(/(Helper|View)( ?Test)?\z/i, self)
+        register_spec_type(/(Helper|View)( ?Test)?\z/, self)
         register_spec_type(self) { |desc| Class === desc && desc < self }
         register_rails_test_case self
         before { setup_minitest_spec_rails_helper_class }
@@ -17,7 +17,7 @@ module MiniTestSpecRails
       def helper_class=(new_class)
         self._helper_class = new_class
       end
-      
+
       def helper_class
         if current_helper_class = self._helper_class
           current_helper_class
