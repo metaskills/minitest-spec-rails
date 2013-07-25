@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'http://github.com/metaskills/minitest-spec-rails'
   gem.summary     = 'Make Rails Use MiniTest::Spec!'
   gem.description = 'The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 3 or 4 test suite.'
+  gem.license     = 'MIT'
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
