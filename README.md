@@ -23,7 +23,7 @@ Our master branch is tracking rails master which is active development for Rails
 
 #### For Rails 3.x or 4.0
 
-Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stable) branch is meant for both Rails 3.x or 4.0 specifically. This version usest the latest 4.x series of minitest.
+Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stable) branch is meant for both Rails 3.x or 4.0 specifically. This version uses the latest 4.x series of minitest.
 
 ```ruby
 group :test do
@@ -72,7 +72,7 @@ gem 'minitest-spec-rails'
 
 ## Test Styles
 
-This <a href="http://cheat.errtheblog.com/s/minitest">cheat sheet</a> shows both the MiniTest::Unit assertions along with the MiniTest::Spec assertion syntax. Remember, MiniTest::Spec is build on top of MiniTest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in MiniTest::Spec and are interchangeable.
+This <a href="http://cheat.errtheblog.com/s/minitest">cheat sheet</a> shows both the MiniTest::Unit assertions along with the MiniTest::Spec assertion syntax. Remember, MiniTest::Spec is built on top of MiniTest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in MiniTest::Spec and are interchangeable.
 
 ```ruby
 # MiniTest::Unit Assertion Style:
@@ -82,7 +82,6 @@ assert_equal 100, foo
 foo.must_equal 100
 ```
 
-All existing Rails test cases that subclass ActiveSupport::TestCase will continue to work and I personally suggest that you still **use the subclass convention** vs the outer describe test case convention. However either will work.
 
 ```ruby
 require 'test_helper'
@@ -101,7 +100,7 @@ describe User do
 end
 ```
 
-Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
+Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So, you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
 
 ```ruby
 # Model Test
@@ -139,7 +138,7 @@ end
 We have baked in a few extra methods behind the scenes to minitest-spec-rails. Most directly support our needs to reflect on described classes, however, they may be useful to you too when meta-programming on top of minitest-spec-rails.
 
 ### #described_class
-The `described_class` method is available both via a class method and an instance method in any Rails test case. It is guaranteed to work despite the described level too. This allows class level macros to be build, much like Shoulda. Remember, it can only do this if you follow Rails naming conventions for your tests.
+The `described_class` method is available both via a class method and an instance method in any Rails test case. It is guaranteed to work despite the described level too. This allows class level macros to be built, much like Shoulda. Remember, it can only do this if you follow Rails naming conventions for your tests.
 
 ```ruby
 class UserTest < ActiveSupport::TestCase
@@ -161,22 +160,22 @@ Rails ActiveSupport::TestCase allows multiple setup and teardown methods per cla
 
 ```ruby
 class ActiveSupportCallbackTest < ActiveSupport::TestCase
- 
+
   setup :foo
   setup :bar
   before { @bat = 'biz' }
- 
+
   it 'works' do
     @foo.must_equal 'foo'
     @bar.must_equal 'bar'
     @bat.must_equal 'biz'
   end
- 
+
   private
- 
+
   def foo ; @foo = 'foo' ; end
   def bar ; @bar = 'bar' ; end
- 
+
 end
 ```
 
@@ -267,7 +266,7 @@ If your view helper tests give you an eror like this: `RuntimeError: In order to
 
 ## Contributing
 
-We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails). If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite. 
+We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails). If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite.
 
 ```shell
 $ bundle install
