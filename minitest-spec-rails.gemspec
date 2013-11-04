@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency     'minitest', '~> 4.7'
   gem.add_runtime_dependency     'rails', '>= 3.0', '< 4.1'
   gem.add_development_dependency 'appraisal'
+  gem.add_development_dependency 'bundler'
   gem.add_development_dependency 'guard-minitest'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'sqlite3'

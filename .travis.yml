@@ -5,6 +5,7 @@ rvm:
 before_install:
   - gem install bundler
   - bundle --version
+install:
   - bundle install
 before_script:
   - bundle exec rake appraisal:setup
