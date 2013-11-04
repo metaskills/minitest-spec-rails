@@ -1,4 +1,9 @@
 
+## 4.7.5
+
+* Fixed gemspec using '>= 3.0', '< 4.1'. Fixed #35.
+
+
 ## 4.7.4
 
 * Enforces case sensitivity on registered spec types. Fixes #26.
