@@ -13,4 +13,4 @@ end
 
 appraise 'rails40' do
   gem 'rails', '~> 4.0.0'
-end unless RUBY_VERSION == '1.8.7'
+end unless RUBY_VERSION =~ '1.8'
