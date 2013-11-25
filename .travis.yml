@@ -1,7 +1,7 @@
 rvm:
   - 1.9.3
   - 2.0.0
-before_install:
+install:
   - gem install bundler
   - bundle --version
   - bundle install
