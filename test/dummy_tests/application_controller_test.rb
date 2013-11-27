@@ -4,8 +4,6 @@ module ApplicationControllerTests
   extend ActiveSupport::Concern
   included do
 
-    tests ApplicationController if MiniTestSpecRails::Util.rails30?
-
     before { get :index }
 
     it 'works' do

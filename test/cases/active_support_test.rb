@@ -41,3 +41,11 @@ class ActiveSupportCallbackTest < ActiveSupport::TestCase
   def bar ; @bar = 'bar' ; end
  
 end
+
+class ActiveSupportSpecTest < ActiveSupport::TestCase
+
+  it 'current spec name' do
+    Thread.current[:current_spec].must_equal self
+  end
+
+end

@@ -13,7 +13,7 @@ module UserTests
     end
 
     it 'allows custom assertions' do
-      assert_blank '' if MiniTestSpecRails::Util.rails3?
+      assert_not false
     end
 
     describe 'nested 1' do
