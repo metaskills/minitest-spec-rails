@@ -6,6 +6,11 @@
 * Leverage `ActiveSupport::Testing::ConstantLookup` for our `described_class` interface.
 
 
+## 4.7.6
+
+* Fix nested described test names. Fixes #21.
+
+
 ## 4.7.5
 
 * Fixed gemspec using '>= 3.0', '< 4.1'. Fixed #35.
