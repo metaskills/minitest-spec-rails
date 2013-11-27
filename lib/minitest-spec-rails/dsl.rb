@@ -10,6 +10,13 @@ module MiniTestSpecRails
 
     module ClassMethods
 
+      def describe(*args, &block)
+        stack = Minitest::Spec.describe_stack
+        stack.push self if stack.empty?
+        super(*args) { class_eval(&block) }
+        stack.pop if stack.length == 1
+      end
+
       def before(type = nil, &block)
         setup { self.instance_eval(&block) }
       end
