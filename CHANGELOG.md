@@ -1,7 +1,7 @@
 
 ## 5.0.0
 
-* Minitest 5.x and Rails 4.x compatability. Fixes #36.
+* Minitest 5.x and Rails 4.1 compatability. Fixes #36.
 * Fix nested described test names along with Minitest::Spec.describe_stack. Fixed #21.
 * Leverage `ActiveSupport::Testing::ConstantLookup` for our `described_class` interface.
 
