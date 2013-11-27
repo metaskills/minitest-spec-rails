@@ -8,8 +8,19 @@ module MiniTestSpecRails
         singleton_class.class_eval { remove_method :describe }
         extend MiniTest::Spec::DSL
         include MiniTestSpecRails::DSL
+        include ActiveSupport::Testing::ConstantLookup
+        extend Descriptions
         register_spec_type(self) { |desc| Class === desc }
-        register_rails_test_case self
+      end
+
+      module Descriptions
+
+        def described_class
+          determine_constant_from_test_name(name) do |constant|
+            Class === constant
+          end
+        end
+
       end
 
       def initialize(*args)

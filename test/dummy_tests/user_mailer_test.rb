@@ -47,19 +47,16 @@ end
 class UserMailerTest < ActionMailer::TestCase
   include UserMailerTests
   it 'reflects' do
-    describing_class.must_equal UserMailerTest
     described_class.must_equal UserMailer
     self.class.described_class.must_equal UserMailer
   end
   describe 'level 1' do
     it 'reflects' do
-      describing_class.must_equal UserMailerTest
       described_class.must_equal  UserMailer
       self.class.described_class.must_equal UserMailer
     end
     describe 'level 2' do
       it 'reflects' do
-        describing_class.must_equal UserMailerTest
         described_class.must_equal  UserMailer
         self.class.described_class.must_equal UserMailer
       end

@@ -49,3 +49,20 @@ class ActiveSupportSpecTest < ActiveSupport::TestCase
   end
 
 end
+
+class ActiveSupportDescribeNamesTest < ActiveSupport::TestCase
+  it 'class name' do
+    assert_equal 'ActiveSupportDescribeNamesTest', self.class.name
+  end
+  describe 'level1' do
+    it 'haz name' do
+      assert_equal 'ActiveSupportDescribeNamesTest::level1', self.class.name
+    end
+    describe 'level2' do
+      it 'haz name' do
+        assert_equal 'ActiveSupportDescribeNamesTest::level1::level2', self.class.name
+      end
+    end
+  end
+end
+

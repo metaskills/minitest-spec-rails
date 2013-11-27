@@ -39,19 +39,16 @@ end
 class UsersHelperTest < ActionView::TestCase
   include UsersHelperTests
   it 'reflects' do
-    describing_class.must_equal UsersHelperTest
     described_class.must_equal UsersHelper
     self.class.described_class.must_equal UsersHelper
   end
   describe 'level 1' do
     it 'reflects' do
-      describing_class.must_equal UsersHelperTest
       described_class.must_equal  UsersHelper
       self.class.described_class.must_equal UsersHelper
     end
     describe 'level 2' do
       it 'reflects' do
-        describing_class.must_equal UsersHelperTest
         described_class.must_equal  UsersHelper
         self.class.described_class.must_equal UsersHelper
       end

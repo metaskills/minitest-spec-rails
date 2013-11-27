@@ -3,7 +3,6 @@ require "#{Dummy::Application.root}/lib/library"
 
 class LibraryTest < ActiveSupport::TestCase
   it 'reflects' do
-    describing_class.must_equal LibraryTest
     described_class.must_equal Library
   end
 end

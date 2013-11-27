@@ -11,7 +11,6 @@ module MiniTestSpecRails
         end
         ActiveSupport.on_load(:action_controller) do 
           require 'minitest-spec-rails/init/action_controller'
-          require 'action_dispatch/testing/integration' # For Rails 3.0 loading.
           require 'minitest-spec-rails/init/action_dispatch'
         end
         ActiveSupport.on_load(:action_mailer) do

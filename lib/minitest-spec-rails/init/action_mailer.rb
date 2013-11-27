@@ -8,14 +8,15 @@ module MiniTestSpecRails
         register_spec_type(self) { |desc| Class === desc && desc < ActionMailer::Base }
         register_spec_type(/Mailer( ?Test)?\z/, self)
         register_spec_type(self) { |desc| Class === desc && desc < self }
-        register_rails_test_case self
-        before { setup_minitest_spec_rails_mailer_class }
+        extend Descriptions
       end
 
-      private
+      module Descriptions
 
-      def setup_minitest_spec_rails_mailer_class
-        describing_class.tests described_class
+        def described_class
+          determine_default_mailer(name)
+        end
+
       end
 
     end

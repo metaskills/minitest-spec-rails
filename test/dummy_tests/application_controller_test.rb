@@ -44,20 +44,17 @@ end
 
 class ApplicationControllerTest < ActionController::TestCase
   include ApplicationControllerTests
-    it 'reflects' do
-    describing_class.must_equal ApplicationControllerTest
+  it 'reflects' do
     described_class.must_equal ApplicationController
     self.class.described_class.must_equal ApplicationController
   end
   describe 'level 1' do
     it 'reflects' do
-      describing_class.must_equal ApplicationControllerTest
       described_class.must_equal  ApplicationController
       self.class.described_class.must_equal ApplicationController
     end
     describe 'level 2' do
       it 'reflects' do
-        describing_class.must_equal ApplicationControllerTest
         described_class.must_equal  ApplicationController
         self.class.described_class.must_equal ApplicationController
       end

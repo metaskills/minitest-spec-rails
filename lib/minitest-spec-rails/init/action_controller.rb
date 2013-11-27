@@ -5,17 +5,18 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
+        extend Descriptions
         register_spec_type(self) { |desc| Class === desc && desc < ActionController::Metal }
         register_spec_type(/Controller( ?Test)?\z/, self)
         register_spec_type(self) { |desc| Class === desc && desc < self }
-        register_rails_test_case self
       end
+      
+      module Descriptions
 
-      private
+        def described_class
+          determine_default_controller_class(name)
+        end
 
-      def setup_controller_request_and_response
-        describing_class.tests described_class
-        super
       end
 
     end
