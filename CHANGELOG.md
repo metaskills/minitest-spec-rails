@@ -1,4 +1,9 @@
 
+## 5.0.1
+
+* Change initialization so that ActiveSupport always comes first. 
+
+
 ## 5.0.0
 
 * Minitest 5.x and Rails 4.1 compatability. Fixes #36.
