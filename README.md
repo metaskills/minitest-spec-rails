@@ -60,7 +60,7 @@ To start off both Mike Moore (@blowmage) and I have worked together and we both 
   * Easy migration path for existing Rails applications.
   * How we go about freedom patching Rails.
   * Fully support Ruby 1.8.7 with all legacy Test::Unit behavior.
-  * Compatability with ActiveSupport::TestCase's setup and teardowns.
+  * Compatibility with ActiveSupport::TestCase's setup and teardowns.
 
 So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
 
