@@ -5,7 +5,6 @@ module MiniTestSpecRails
     config.minitest_spec_rails.mini_shoulda = false
     
     config.before_initialize do |app|
-      return unless Rails.env.test?
       require 'active_support'
       require 'minitest-spec-rails/init/active_support'
       ActiveSupport.on_load(:action_view) do
@@ -18,12 +17,11 @@ module MiniTestSpecRails
       ActiveSupport.on_load(:action_mailer) do
         require 'minitest-spec-rails/init/action_mailer'
       end
-    end
+    end if Rails.env.test?
 
     initializer 'minitest-spec-rails.mini_shoulda', :group => :all do |app|
-      return unless Rails.env.test?
       require 'minitest-spec-rails/init/mini_shoulda' if app.config.minitest_spec_rails.mini_shoulda
-    end
+    end if Rails.env.test?
     
   end
 end

@@ -1,4 +1,9 @@
 
+## 5.0.2
+
+* Fixed initialization callbacks for latest Rails 4.1. Fixes #39.
+
+
 ## 5.0.1
 
 * Change initialization so that ActiveSupport always comes first. 
