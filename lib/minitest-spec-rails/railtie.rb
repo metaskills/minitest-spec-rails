@@ -1,18 +1,16 @@
 module MiniTestSpecRails
   class Railtie < ::Rails::Railtie
-    
+
     config.minitest_spec_rails = ActiveSupport::OrderedOptions.new
     config.minitest_spec_rails.mini_shoulda = false
-    
+
     config.before_initialize do |app|
       require 'active_support'
       require 'minitest-spec-rails/init/active_support'
-      ActiveSupport.on_load(:action_view) do
-        require 'minitest-spec-rails/init/action_view'
-      end
-      ActiveSupport.on_load(:action_controller) do 
+      ActiveSupport.on_load(:action_controller) do
         require 'minitest-spec-rails/init/action_controller'
         require 'minitest-spec-rails/init/action_dispatch'
+        require 'minitest-spec-rails/init/action_view'
       end
       ActiveSupport.on_load(:action_mailer) do
         require 'minitest-spec-rails/init/action_mailer'
@@ -22,6 +20,6 @@ module MiniTestSpecRails
     initializer 'minitest-spec-rails.mini_shoulda', :group => :all do |app|
       require 'minitest-spec-rails/init/mini_shoulda' if app.config.minitest_spec_rails.mini_shoulda
     end if Rails.env.test?
-    
+
   end
 end

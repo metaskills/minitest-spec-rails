@@ -1,4 +1,9 @@
 
+## 5.0.3
+
+* Fixed ActionView load order & url helpers. Fixes #42.
+
+
 ## 5.0.2
 
 * Fixed initialization callbacks for latest Rails 4.1. Fixes #39.
@@ -6,7 +11,7 @@
 
 ## 5.0.1
 
-* Change initialization so that ActiveSupport always comes first. 
+* Change initialization so that ActiveSupport always comes first.
 
 
 ## 5.0.0
