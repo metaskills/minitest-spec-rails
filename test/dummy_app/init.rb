@@ -6,7 +6,7 @@ require 'rails/all'
 Bundler.require :default, :development, :test
 
 module Dummy
-  class Application < ::Rails::Application 
+  class Application < ::Rails::Application
 
     # Basic Engine
     config.root = File.join __FILE__, '..'
@@ -22,20 +22,16 @@ module Dummy
     config.action_controller.allow_forgery_protection = false
     config.action_mailer.delivery_method = :test
     config.active_support.deprecation = :stderr
-    if Rails.version < '4.0'
-      config.threadsafe!
-    else
-      config.allow_concurrency = true
-      config.cache_classes = true
-      config.dependency_loading = true
-      config.preload_frameworks = true
-      config.eager_load = true
-      config.secret_key_base = '012345678901234567890123456789'
-    end
+    config.allow_concurrency = true
+    config.cache_classes = true
+    config.dependency_loading = true
+    config.preload_frameworks = true
+    config.eager_load = true
+    config.secret_key_base = '012345678901234567890123456789'
 
     # Custom
     config.minitest_spec_rails.mini_shoulda = true
-    
+
   end
 end
 
