@@ -1,5 +1,4 @@
 require 'dummy_app/init'
-require 'support/minitest'
 require 'support/shared_test_case_behavior'
 
 module MiniTestSpecRails
@@ -7,6 +6,6 @@ module MiniTestSpecRails
 
     include MiniTestSpecRails::SharedTestCaseBehavior
 
-    
+
   end
 end
