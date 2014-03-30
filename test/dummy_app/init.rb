@@ -1,9 +1,8 @@
-ENV['RAILS_ENV'] = 'test'
-require 'rubygems'
+ENV["RAILS_ENV"] ||= "test"
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../../Gemfile', __FILE__)
 require 'bundler/setup'
 require 'rails/all'
-Bundler.require :default, :development, :test
+Bundler.require(:default, Rails.env)
 
 module Dummy
   class Application < ::Rails::Application
@@ -36,3 +35,4 @@ module Dummy
 end
 
 Dummy::Application.initialize!
+require 'rails/test_help'
