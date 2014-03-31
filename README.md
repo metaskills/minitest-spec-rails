@@ -26,7 +26,7 @@ Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stab
 
 ```ruby
 group :test do
-  gem 'minitest-spec-rails'
+  gem 'minitest-spec-rails', github: 'metaskills/minitest-spec-rails', branch: '3-x-stable'
 end
 ```
 
