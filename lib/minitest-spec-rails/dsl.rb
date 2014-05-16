@@ -24,7 +24,7 @@ module MiniTestSpecRails
       end
 
       def test(name, &block)
-        it { self.instance_eval(&block) }
+        it(name) { self.instance_eval(&block) }
       end
 
       def described_class
