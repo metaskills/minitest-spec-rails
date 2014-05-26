@@ -1,3 +1,7 @@
+## 5.0.4
+
+* Fixed ActiveSupport's Declarative#test forwarded implementation. Fixed #46.
+
 
 ## 5.0.3
 
