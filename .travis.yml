@@ -7,6 +7,6 @@ install:
   - bundle --version
   - bundle install
 before_script:
-  - bundle exec rake appraisal:setup
+  - bundle exec appraisal update
 script:
-  - bundle exec rake appraisal test
+  - bundle exec appraisal rake test

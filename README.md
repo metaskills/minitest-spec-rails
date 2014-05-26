@@ -269,14 +269,14 @@ We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-ra
 
 ```shell
 $ bundle install
-$ bundle exec rake appraisal:setup
-$ bundle exec rake appraisal test
+$ bundle exec appraisal update
+$ bundle exec appraisal rake test
 ```
 
-We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `rake -T` for a list. For example, the following command will run the tests for Rails 4.1 only.
+We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `bundle exec appraisal -h` for a list. For example, the following command will run the tests for Rails 4.1 only.
 
 ```shell
-$ bundle exec rake appraisal:rails41 test
+$ bundle exec appraisal rails41 rake test
 ```
 
 We have a few branches for each major Rails version.
