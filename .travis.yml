@@ -1,11 +1,13 @@
 rvm:
   - 1.9.3
   - 2.0.0
+  - 2.1.1
 install:
   - gem install bundler
-  - gem install rake
-  - gem install appraisal
+  - bundle --version
+  - bundle install
 before_script:
-  - rake appraisal:setup
+  - bundle exec appraisal update
 script:
-  - rake appraisal test
+  - bundle exec appraisal rake test
+
