@@ -26,4 +26,5 @@ ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::ActiveSupportBeh
 # and hence wont find a #path match in REGEXPS due to the space. So add
 # another that allows filenames with spaces in it.
 #
+require 'active_support/core_ext/load_error'
 LoadError::REGEXPS << %r{^Missing \w+ (?:file\s*)?(.*\.rb)$}i

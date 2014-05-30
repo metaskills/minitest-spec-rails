@@ -1,4 +1,9 @@
 
+## 4.7.7
+
+* Fixed LoadError::REGEXPS addition by requiring file first.
+
+
 ## 4.7.6
 
 * Fix nested described test names. Fixes #21.
