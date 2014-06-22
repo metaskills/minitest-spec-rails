@@ -87,7 +87,7 @@ end
 Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
 
 ```ruby
-# Model Test
+# Model Test (or anything else not listed below)
 class UserTest < ActiveSupport::TestCase
 end
 describe User do
