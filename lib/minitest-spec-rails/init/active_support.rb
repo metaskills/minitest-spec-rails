@@ -5,7 +5,7 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
-        singleton_class.class_eval { remove_method :describe }
+        singleton_class.class_eval { remove_method :describe } if ::Rails.version < '4.2'
         extend MiniTest::Spec::DSL
         include MiniTestSpecRails::DSL
         include ActiveSupport::Testing::ConstantLookup
