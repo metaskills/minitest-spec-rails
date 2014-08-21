@@ -17,7 +17,7 @@ Existing or new Rails applications that use the default Rails testing structure 
 
 #### Rails 4.1
 
-Our master branch is tracking rails master which is active development for Rails 4.1 which uses minitest 5.0.
+Our master branch is tracking rails 4.1 and up.
 
 
 #### For Rails 3.x or 4.0
