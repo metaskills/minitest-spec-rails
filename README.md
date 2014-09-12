@@ -26,7 +26,7 @@ Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stab
 
 ```ruby
 group :test do
-  gem 'minitest-spec-rails'
+  gem 'minitest-spec-rails', :require => false
 end
 ```
 
@@ -68,6 +68,12 @@ So the goal of this project is to make Rails 3 or 4 applications just work as if
 gem 'minitest-spec-rails'
 ```
 
+```ruby
+# test/test_helper.rb
+require './config/environment'
+require 'minitest-spec-rails'
+# require 'minitest-spec-rails/init/mini_shoulda'
+```
 
 ## Test Styles
 
@@ -84,6 +90,7 @@ foo.must_equal 100
 
 ```ruby
 require 'test_helper'
+
 class UserTest < ActiveSupport::TestCase
   let(:user_ken)   { User.create! :email => 'ken@metaskills.net' }
   it 'works' do
