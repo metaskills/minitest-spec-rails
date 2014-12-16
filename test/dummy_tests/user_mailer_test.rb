@@ -6,7 +6,12 @@ module UserMailerTests
 
     let(:deliveries)        { ActionMailer::Base.deliveries }
     let(:user_mailer_class) { UserMailer }
-    let(:user_email)        { user_mailer_class.welcome(user_ken).deliver }
+    let(:user_email)        {
+      user_mailer_class.welcome(user_ken).tap do |mail|
+        laterable = Rails.version > '4.2' || Rails.version.starts_with?('4.2')
+        laterable ? mail.deliver_now : mail.deliver
+      end
+    }
 
     it 'works' do
       deliveries.must_be :empty?
@@ -40,7 +45,7 @@ module UserMailerTests
       end
 
     end
-    
+
   end
 end
 

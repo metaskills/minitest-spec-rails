@@ -10,8 +10,9 @@ module Dummy
     # Basic Engine
     config.root = File.join __FILE__, '..'
     config.cache_store = :memory_store
-    config.assets.enabled = false if Rails.version > '3.1'
+    config.assets.enabled = false
     config.secret_token = '012345678901234567890123456789'
+    config.active_support.test_order = :random
 
     # Mimic Test Environment Config.
     config.whiny_nils = true if Rails.version < '4.0'

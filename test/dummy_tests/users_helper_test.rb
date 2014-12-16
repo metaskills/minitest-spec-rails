@@ -32,7 +32,7 @@ module UsersHelperTests
       end
 
     end
-    
+
   end
 end
 
