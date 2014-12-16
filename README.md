@@ -95,11 +95,13 @@ end
 ```ruby
 require 'test_helper'
 describe User do
-  # This will work too.
+  # This will work too, but is not recommended
 end
 ```
 
 Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So, you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
+
+Using `describe` in this way [is not recommended](https://github.com/metaskills/minitest-spec-rails/issues/56).  
 
 ```ruby
 # Model Test (or anything else not listed below)
