@@ -101,7 +101,7 @@ end
 
 Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So, you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
 
-Using `describe` in this way [is not recommended](https://github.com/metaskills/minitest-spec-rails/issues/56).  
+Using `describe` in this way [is not recommended](https://github.com/metaskills/minitest-spec-rails/issues/56).
 
 ```ruby
 # Model Test (or anything else not listed below)
@@ -289,4 +289,5 @@ We have a few branches for each major Rails version.
 
 Our current build status is:
 [![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
+
 
