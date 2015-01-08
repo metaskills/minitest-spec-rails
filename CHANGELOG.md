@@ -1,3 +1,12 @@
+## 5.1.1
+
+* Fix an issue where `describe` method was removed. Fixes #55 & #50
+  [41a0f851](https://github.com/metaskills/minitest-spec-rails/commit/41a0f851c8a290f59feb1cb8b20759f0e2a9697a)
+
+## 5.1.0
+
+No release notes yet.  PRs welcome!
+
 ## 5.0.4
 
 * Fixed ActiveSupport's Declarative#test forwarded implementation. Fixed #46.
