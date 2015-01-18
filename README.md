@@ -15,7 +15,7 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MiniTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
 
-#### Rails 4.1
+#### Rails 4.1 or 4.2, 5.x
 
 Our master branch is tracking rails 4.1, 4.2 and hopefully up to 5.x active development.
 
