@@ -17,8 +17,13 @@ Existing or new Rails applications that use the default Rails testing structure 
 
 #### Rails 4.1
 
-Our master branch is tracking rails 4.1 and up.
+Our master branch is tracking rails 4.1, 4.2 and hopefully up to 5.x active development.
 
+```ruby
+group :test do
+  gem 'minitest-spec-rails'
+end
+```
 
 #### For Rails 3.x or 4.0
 
@@ -26,7 +31,7 @@ Our [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stab
 
 ```ruby
 group :test do
-  gem 'minitest-spec-rails'
+  gem 'minitest-spec-rails', '~> 4.7'
 end
 ```
 
