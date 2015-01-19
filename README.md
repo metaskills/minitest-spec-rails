@@ -136,6 +136,12 @@ class UsersHelperTest < ActionView::TestCase
 end
 describe UsersHelper do
 end
+
+# Job Helper Test
+class MyJobTest < ActiveJob::TestCase
+end
+describe MyJob do
+end
 ```
 
 
