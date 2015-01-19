@@ -14,6 +14,9 @@ module MiniTestSpecRails
       ActiveSupport.on_load(:action_mailer) do
         require 'minitest-spec-rails/init/action_mailer'
       end
+      ActiveSupport.on_load(:active_job) do
+        require 'minitest-spec-rails/init/active_job'
+      end
     end if Rails.env.test?
 
     initializer 'minitest-spec-rails.action_view', :after => 'action_view.setup_action_pack', :group => :all do |app|

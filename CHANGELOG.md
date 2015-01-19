@@ -1,3 +1,8 @@
+
+## 5.2.0
+
+* Added ActiveJob support. Fixes #59. Thanks @xpepermint.
+
 ## 5.1.1
 
 * Fix an issue where `describe` method was removed. Fixes #55 & #50
@@ -5,7 +10,7 @@
 
 ## 5.1.0
 
-No release notes yet.  PRs welcome!
+No release notes yet. PRs welcome!
 
 ## 5.0.4
 
