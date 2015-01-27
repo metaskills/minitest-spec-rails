@@ -1,4 +1,8 @@
 
+## 5.2.1
+
+* Only add our Thread.current[:current_spec] hack if needed. Fixes #45.
+
 ## 5.2.0
 
 * Added ActiveJob support. Fixes #59. Thanks @xpepermint.

@@ -25,7 +25,7 @@ module MiniTestSpecRails
       def initialize(*args)
         Thread.current[:current_spec] = self
         super
-      end
+      end if Minitest::VERSION < "5.3.3"
 
     end
   end
