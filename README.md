@@ -100,25 +100,25 @@ end
 ```ruby
 require 'test_helper'
 describe User do
-  # This will work too, but is not recommended
+  # THIS IS NOT RECOMMENDED!
 end
 ```
 
-Just for reference, here is a full list of each of Rails test case classes and the matching describe alternative if one exists. Remember, names are important when using the describe syntax. So, you can not have a mailer named `FooBar` and expect it to work with the outer describe spec style since there is no way to map the spec type based on an existing naming convention.
+RSpec 3 is also moving away from the outter describe test type inference, as described in this line from their [release notes](https://www.relishapp.com/rspec/rspec-rails/v/3-1/docs/changelog).
 
-Using `describe` in this way [is not recommended](https://github.com/metaskills/minitest-spec-rails/issues/56).
+    Spec types are no longer inferred by location, they instead need to be explicitly tagged. The old behaviour is enabled by config.infer_spec_type_from_file_location!, which is still supplied in the default generated spec_helper.rb. (Xavier Shay, Myron Marston)
+
+Not that we want to mimic RSpec, but the aim of this gem is very straight forward and minimilistic. We simply want to expose the Minitest Spec::DSL and core assertion style within ActiveSupport. Period. So it is very possible that us matching outter describe to classes is simply going to go away on day soon.
+
+Just for reference, here is a full list of each of Rails test case we support.
 
 ```ruby
 # Model Test (or anything else not listed below)
 class UserTest < ActiveSupport::TestCase
 end
-describe User do
-end
 
 # Controller Test
 class UsersControllerTest < ActionController::TestCase
-end
-describe UsersController do
 end
 
 # Integration Tests - Must use subclass style!
@@ -128,19 +128,13 @@ end
 # Mailer Test
 class UserMailerTest < ActionMailer::TestCase
 end
-describe UserMailer do
-end
 
 # View Helper Test
 class UsersHelperTest < ActionView::TestCase
 end
-describe UsersHelper do
-end
 
 # Job Helper Test
 class MyJobTest < ActiveJob::TestCase
-end
-describe MyJob do
 end
 ```
 
