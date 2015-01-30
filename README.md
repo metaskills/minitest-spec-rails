@@ -108,7 +108,7 @@ RSpec 3 is also moving away from the outter describe test type inference, as des
 
 > Spec types are no longer inferred by location, they instead need to be explicitly tagged. The old behaviour is enabled by config.infer_spec_type_from_file_location!, which is still supplied in the default generated spec_helper.rb. (Xavier Shay, Myron Marston)
 
-Not that we want to mimic RSpec, but the aim of this gem is very straight forward and minimilistic. We simply want to expose the Minitest Spec::DSL and core assertion style within ActiveSupport. Period. So it is very possible that us matching outter describe to classes is simply going to go away on day soon.
+Not that we want to mimic RSpec, but the aim of this gem is very straight forward and minimilistic. We simply want to expose the Minitest Spec::DSL and core assertion style within ActiveSupport. Period. So it is very possible that us matching outter describe to classes is simply going to go away one day soon.
 
 Just for reference, here is a full list of each of Rails test case we support.
 
