@@ -1,3 +1,6 @@
+## 4.7.8
+
+* Change initialization so that ActiveSupport always comes first. Fixes #63.
 
 ## 4.7.7
 
