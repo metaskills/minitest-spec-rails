@@ -194,7 +194,7 @@ If you are migrating away from Shoulda, then minitest-spec-rails' mini_shoulda f
 config.minitest_spec_rails.mini_shoulda = true
 ```
 
-Doing so only enables a few aliases that allow the Shoulda `context`, `should`, and `should_eventually` methods. The following code demonstrates the full features of the mini_shoulda implementation. It basically replaces the shell of [should-context](https://github.com/thoughtbot/shoulda-context) in a few lines of code.
+Doing so only enables a few aliases that allow the Shoulda `context`, `should`, and `should_eventually` methods. The following code demonstrates the full features of the mini_shoulda implementation. It basically replaces the shell of [shoulda-context](https://github.com/thoughtbot/shoulda-context) in a few lines of code.
 
 ```ruby
 class PostTests < ActiveSupport::TestCase
@@ -223,7 +223,7 @@ a.wont_include b              # To
 
 ### Matchers
 
-**I highly suggest that you stay away from matchers** since MiniTest::Spec gives you all the tools you need to write good tests. Staying away from matchers will make your code's tests live longer. So my advice is to stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are really your thing, I recommend the [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
+**I highly suggest that you stay away from matchers** since MiniTest::Spec gives you all the tools you need to write good tests. Staying away from matchers will make your code's tests live longer. So my advice is to stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are really your thing, I recommend the [minitest-matchers](https://github.com/wojtekmach/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
 
 ```ruby
 describe Post do
