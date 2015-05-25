@@ -1,4 +1,8 @@
 
+## 5.2.2
+
+* Fix ActiveJob support for `described_class`. Thanks @pschambacher.
+
 ## 5.2.1
 
 * Only add our Thread.current[:current_spec] hack if needed. Fixes #45.

@@ -14,7 +14,9 @@ module MiniTestSpecRails
       module Descriptions
 
         def described_class
-          determine_default_mailer(name)
+          determine_constant_from_test_name(name) do |constant|
+            Class === constant && constant < ActiveJob::Base
+          end
         end
 
       end
