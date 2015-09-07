@@ -12,6 +12,10 @@ module MiniTestSpecRails
 
     private
 
+    def rails5?
+      Rails.version >= '5.0'
+    end
+
     def setup_dummy_schema
       ActiveRecord::Base.class_eval do
         connection.instance_eval do
@@ -25,7 +29,7 @@ module MiniTestSpecRails
         end
       end
     end
-    
+
   end
 end
 

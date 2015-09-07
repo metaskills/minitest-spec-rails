@@ -8,11 +8,11 @@ module ApplicationControllerTests
 
     it 'works' do
       get :index
-      response.body.must_equal 'Rendered MiniTest::Spec'
+      response.body.must_equal '<h1>Rendered MiniTest::Spec</h1>'
     end
 
     it 'allows custom assertions' do
-      assert_template :partial => false
+      assert_select 'h1', :text => 'Rendered MiniTest::Spec'
     end
 
     it 'can find the controller_class' do
@@ -38,7 +38,7 @@ module ApplicationControllerTests
       end
 
     end
-    
+
   end
 end
 

@@ -1,4 +1,8 @@
 
+## 5.3.0
+
+* Allow Rails 4.1 to new 5.x to be supported.
+
 ## 5.2.2
 
 * Fix ActiveJob support for `described_class`. Thanks @pschambacher.
