@@ -1,5 +1,6 @@
 require 'test_helper'
 
+if defined?(ActiveJob)
 class MyJob < ActiveJob::Base ; def perform(record) ; true ; end end
 class TrashableCleanupJob < MyJob ; end
 
@@ -39,4 +40,5 @@ class ActiveJobTest < MiniTestSpecRails::TestCase
     refute_equal ActiveJob::TestCase, actual
   end
 
+end
 end
