@@ -13,10 +13,8 @@ install:
   - gem install bundler
   - bundle --version
   - bundle install
-before_script:
-  - bundle exec appraisal update
 script:
-  - bundle exec appraisal rake test
+  - bundle exec rake test
 matrix:
   exclude:
     - rvm: 1.9.3
