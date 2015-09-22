@@ -1,3 +1,7 @@
+## 4.7.9
+
+* Fix Rails 3.0 and 3.1 not setting up controller tests. Thanks @hmadison.
+
 ## 4.7.8
 
 * Change initialization so that ActiveSupport always comes first. Fixes #63.
