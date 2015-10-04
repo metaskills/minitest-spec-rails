@@ -1,19 +1,19 @@
 GIT
   remote: git://github.com/rack/rack.git
-  revision: a46eae2345a00666ade983740ac27c79adc7bd70
+  revision: c617ea99c12a5bfe026e00476ff37e714e01891a
   specs:
     rack (2.0.0.alpha)
       json
 
 GIT
   remote: git://github.com/rails/arel.git
-  revision: 64d897844c5b30657ab702293647f09dcb38a13e
+  revision: 3c429c5d86e9e2201c2a35d934ca6a8911c18e69
   specs:
     arel (7.0.0.alpha)
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 7b9b0b531f9cb6a64737efc5c46890b4609847bf
+  revision: 5c2f182e2d56a92afffbd31253dbae1edf5f08ab
   specs:
     actionmailer (5.0.0.alpha)
       actionpack (= 5.0.0.alpha)
@@ -45,12 +45,11 @@ GIT
       activesupport (= 5.0.0.alpha)
       arel (= 7.0.0.alpha)
     activesupport (5.0.0.alpha)
-      concurrent-ruby (~> 0.9.1)
+      concurrent-ruby (~> 1.0.0.pre3, < 2.0.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       method_source
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     rails (5.0.0.alpha)
       actionmailer (= 5.0.0.alpha)
@@ -72,29 +71,29 @@ GIT
 
 GIT
   remote: git://github.com/rails/sass-rails.git
-  revision: d113392af2ba9d6a4a5b37331f74f4eb28c8be4c
+  revision: a3b25261a3d31ed9ff5dd6e841b777790fc86c55
   specs:
     sass-rails (6.0.0)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.3)
+      sass (~> 3.4)
       sprockets (>= 4.0)
       sprockets-rails (< 4.0)
 
 GIT
   remote: git://github.com/rails/sprockets-rails.git
-  revision: e65e088575be4f6b994823b80a277affb0a57a5e
+  revision: 77098c5acd9f27613875097ce6587aff9d871d7f
   specs:
-    sprockets-rails (3.0.0.beta2)
+    sprockets-rails (3.0.0.beta3)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
 
 GIT
   remote: git://github.com/rails/sprockets.git
-  revision: 7b913165d54bef952b8f83509e731a90987321bb
+  revision: 60e7d8ed69ed3bb45880b9bf6ac37a457eb45c4a
   specs:
     sprockets (4.0.0)
-      rack (> 1, < 3)
+      rack (>= 1, < 3)
 
 PATH
   remote: ../
@@ -111,7 +110,7 @@ GEM
       rake
       thor (>= 0.14.0)
     builder (3.2.2)
-    concurrent-ruby (0.9.1)
+    concurrent-ruby (1.0.0.pre3)
     erubis (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -122,9 +121,9 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.6.1)
+    mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.0)
+    minitest (5.8.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     rack-test (0.6.3)
