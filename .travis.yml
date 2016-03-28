@@ -1,7 +1,6 @@
 sudo: false
 cache: bundler
 rvm:
-  - 1.9.3
   - 2.0
   - 2.1
   - 2.2.3
@@ -17,8 +16,6 @@ script:
   - bundle exec rake test
 matrix:
   exclude:
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails50.gemfile
     - rvm: 2.0
       gemfile: gemfiles/rails50.gemfile
     - rvm: 2.1
