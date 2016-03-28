@@ -15,9 +15,9 @@ module MiniTestSpecRails
 
       def setup_controller_request_and_response
         if Util.rails30? || Util.rails31?
-          self.class.tests described_class
+          self.class.tests described_class if described_class
         else
-          describing_class.tests described_class
+          describing_class.tests described_class if described_class
         end
         super
       end
