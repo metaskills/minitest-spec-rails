@@ -17,15 +17,15 @@ module MiniTestSpecRails
       ActiveSupport.on_load(:active_job) do
         require 'minitest-spec-rails/init/active_job'
       end
-    end if Rails.env.test?
+    end if ENV['RAILS_ENV'] == 'test'
 
     initializer 'minitest-spec-rails.action_view', :after => 'action_view.setup_action_pack', :group => :all do |app|
       require 'minitest-spec-rails/init/action_view'
-    end if Rails.env.test?
+    end if ENV['RAILS_ENV'] == 'test'
 
     initializer 'minitest-spec-rails.mini_shoulda', :group => :all do |app|
       require 'minitest-spec-rails/init/mini_shoulda' if app.config.minitest_spec_rails.mini_shoulda
-    end if Rails.env.test?
+    end if ENV['RAILS_ENV'] == 'test'
 
   end
 end

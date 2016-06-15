@@ -1,3 +1,6 @@
+## 5.3.1
+
+* Use ENV['RAILS_ENV'] for initializer guards vs memo'ed Rails.env. Fixes #72.
 
 ## 5.3.0
 
