@@ -1,6 +1,6 @@
 ## 5.3.1
 
-* Revert only require initializers Rails.env.test? done in v4.3.6. Fixes #72.
+* Use ENV['RAILS_ENV'] for initializer guards vs memo'ed Rails.env. Fixes #72.
 
 ## 5.3.0
 
