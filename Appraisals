@@ -8,5 +8,5 @@ appraise 'rails42' do
 end
 
 appraise 'rails50' do
-  gem 'rails', '5.0.0.rc1'
+  gem 'rails', '5.0.0'
 end
