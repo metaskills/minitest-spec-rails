@@ -1,7 +1,6 @@
 module MiniTestSpecRails
   module Init
     module ActionViewBehavior
-
       extend ActiveSupport::Concern
 
       included do
@@ -12,13 +11,10 @@ module MiniTestSpecRails
       end
 
       module Descriptions
-
         def described_class
           determine_default_helper_class(name)
         end
-
       end
-
     end
   end
 end

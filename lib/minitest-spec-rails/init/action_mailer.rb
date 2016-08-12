@@ -1,7 +1,6 @@
 module MiniTestSpecRails
   module Init
     module ActionMailerBehavior
-
       extend ActiveSupport::Concern
 
       included do
@@ -12,16 +11,12 @@ module MiniTestSpecRails
       end
 
       module Descriptions
-
         def described_class
           determine_default_mailer(name)
         end
-
       end
-
     end
   end
 end
 
 ActionMailer::TestCase.send :include, MiniTestSpecRails::Init::ActionMailerBehavior
-

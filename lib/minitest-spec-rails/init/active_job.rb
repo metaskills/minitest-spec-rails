@@ -1,7 +1,6 @@
 module MiniTestSpecRails
   module Init
     module ActiveJobBehavior
-
       extend ActiveSupport::Concern
 
       included do
@@ -12,18 +11,14 @@ module MiniTestSpecRails
       end
 
       module Descriptions
-
         def described_class
           determine_constant_from_test_name(name) do |constant|
             Class === constant && constant < ActiveJob::Base
           end
         end
-
       end
-
     end
   end
 end
 
 ActiveJob::TestCase.send :include, MiniTestSpecRails::Init::ActiveJobBehavior
-

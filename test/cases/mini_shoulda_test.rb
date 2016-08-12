@@ -1,7 +1,6 @@
 require 'test_helper_dummy'
 
 class PostTests < ActiveSupport::TestCase
-
   i_suck_and_my_tests_are_order_dependent!
 
   $teardown_ran = false
@@ -27,11 +26,8 @@ class PostTests < ActiveSupport::TestCase
   end
 
   context 'level 1' do
-
     should 'work' do
       @post.must_be_instance_of Post
     end
-
   end
-
 end

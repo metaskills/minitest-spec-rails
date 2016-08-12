@@ -1,7 +1,6 @@
 module MiniTestSpecRails
   module Init
     module ActionControllerBehavior
-
       extend ActiveSupport::Concern
 
       included do
@@ -12,13 +11,10 @@ module MiniTestSpecRails
       end
 
       module Descriptions
-
         def described_class
           determine_default_controller_class(name)
         end
-
       end
-
     end
   end
 end

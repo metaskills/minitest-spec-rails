@@ -3,15 +3,14 @@ require 'test_helper_dummy'
 module UserMailerTests
   extend ActiveSupport::Concern
   included do
-
     let(:deliveries)        { ActionMailer::Base.deliveries }
     let(:user_mailer_class) { UserMailer }
-    let(:user_email)        {
+    let(:user_email)        do
       user_mailer_class.welcome(user_ken).tap do |mail|
         laterable = Rails.version > '4.2' || Rails.version.starts_with?('4.2')
         laterable ? mail.deliver_now : mail.deliver
       end
-    }
+    end
 
     it 'works' do
       deliveries.must_be :empty?
@@ -31,7 +30,6 @@ module UserMailerTests
     end
 
     describe 'nested 1' do
-
       it('works') { skip }
 
       it 'can find the mailer_class' do
@@ -39,13 +37,9 @@ module UserMailerTests
       end
 
       describe 'nested 2' do
-
         it('works') { skip }
-
       end
-
     end
-
   end
 end
 

@@ -3,7 +3,6 @@ require 'test_helper_dummy'
 module ApplicationControllerTests
   extend ActiveSupport::Concern
   included do
-
     before { get :index }
 
     it 'works' do
@@ -12,7 +11,7 @@ module ApplicationControllerTests
     end
 
     it 'allows custom assertions' do
-      assert_select 'h1', :text => 'Rendered MiniTest::Spec'
+      assert_select 'h1', text: 'Rendered MiniTest::Spec'
     end
 
     it 'can find the controller_class' do
@@ -24,7 +23,6 @@ module ApplicationControllerTests
     end
 
     describe 'nested 1' do
-
       it('works') { skip }
 
       it 'can find the controller_class' do
@@ -32,13 +30,9 @@ module ApplicationControllerTests
       end
 
       describe 'nested 2' do
-
         it('works') { skip }
-
       end
-
     end
-
   end
 end
 

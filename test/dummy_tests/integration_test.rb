@@ -3,7 +3,6 @@ require 'test_helper_dummy'
 module IntegrationTests
   extend ActiveSupport::Concern
   included do
-
     fixtures :all
 
     it 'works' do
@@ -12,7 +11,7 @@ module IntegrationTests
     end
 
     it 'works with assert_routing' do
-      assert_routing '/', :controller => 'application', :action => 'index'
+      assert_routing '/', controller: 'application', action: 'index'
     end
 
     it 'can find the app' do
@@ -20,7 +19,6 @@ module IntegrationTests
     end
 
     describe 'nested 1' do
-
       it('works') { skip }
 
       it 'can find the app' do
@@ -28,13 +26,9 @@ module IntegrationTests
       end
 
       describe 'nested 2' do
-
         it('works') { skip }
-
       end
-
     end
-
   end
 end
 
@@ -44,6 +38,6 @@ end
 
 class AppTest < ActionDispatch::IntegrationTest
   def test_homepage
-    assert_routing '/', :controller => 'application', :action => 'index'
+    assert_routing '/', controller: 'application', action: 'index'
   end
 end

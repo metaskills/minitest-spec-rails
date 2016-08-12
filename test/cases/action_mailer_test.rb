@@ -4,20 +4,19 @@ class NotificationMailer < ActionMailer::Base; end
 class Notifications < ActionMailer::Base; end
 
 class ActionMailerTest < MiniTestSpecRails::TestCase
-
   it 'matches spec type for class constants' do
     assert_mailer MiniTest::Spec.spec_type(NotificationMailer)
     assert_mailer MiniTest::Spec.spec_type(Notifications)
   end
 
   it 'matches spec type for strings' do
-    assert_mailer MiniTest::Spec.spec_type("WidgetMailer")
-    assert_mailer MiniTest::Spec.spec_type("WidgetMailerTest")
-    assert_mailer MiniTest::Spec.spec_type("Widget Mailer Test")
+    assert_mailer MiniTest::Spec.spec_type('WidgetMailer')
+    assert_mailer MiniTest::Spec.spec_type('WidgetMailerTest')
+    assert_mailer MiniTest::Spec.spec_type('Widget Mailer Test')
     # And is case sensitive
-    refute_mailer MiniTest::Spec.spec_type("widgetmailer")
-    refute_mailer MiniTest::Spec.spec_type("widgetmailertest")
-    refute_mailer MiniTest::Spec.spec_type("widget mailer test")
+    refute_mailer MiniTest::Spec.spec_type('widgetmailer')
+    refute_mailer MiniTest::Spec.spec_type('widgetmailertest')
+    refute_mailer MiniTest::Spec.spec_type('widget mailer test')
   end
 
   it 'wont match spec type for non space characters' do
@@ -25,7 +24,7 @@ class ActionMailerTest < MiniTestSpecRails::TestCase
     refute_mailer MiniTest::Spec.spec_type("Widget Mailer\rTest")
     refute_mailer MiniTest::Spec.spec_type("Widget Mailer\nTest")
     refute_mailer MiniTest::Spec.spec_type("Widget Mailer\fTest")
-    refute_mailer MiniTest::Spec.spec_type("Widget MailerXTest")
+    refute_mailer MiniTest::Spec.spec_type('Widget MailerXTest')
   end
 
   private
@@ -37,5 +36,4 @@ class ActionMailerTest < MiniTestSpecRails::TestCase
   def refute_mailer(actual)
     refute_equal ActionMailer::TestCase, actual
   end
-
 end
