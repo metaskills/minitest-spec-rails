@@ -30,7 +30,6 @@ class ActionViewTest < MiniTestSpecRails::TestCase
     refute_view MiniTest::Spec.spec_type("Widget HelperXTest")
   end
 
-
   private
 
   def assert_view(actual)

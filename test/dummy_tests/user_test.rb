@@ -31,7 +31,7 @@ module UserTests
       end
 
     end
-    
+
   end
 end
 
@@ -43,12 +43,12 @@ class UserTest < ActiveSupport::TestCase
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal  User
+      described_class.must_equal User
       self.class.described_class.must_equal User
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal  User
+        described_class.must_equal User
         self.class.described_class.must_equal User
       end
     end

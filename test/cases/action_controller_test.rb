@@ -27,7 +27,6 @@ class ActionControllerTest < MiniTestSpecRails::TestCase
     refute_controller MiniTest::Spec.spec_type("Widget ControllerXTest")
   end
 
-
   private
 
   def assert_controller(actual)

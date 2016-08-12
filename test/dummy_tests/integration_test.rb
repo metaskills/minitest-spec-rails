@@ -34,7 +34,7 @@ module IntegrationTests
       end
 
     end
-    
+
   end
 end
 

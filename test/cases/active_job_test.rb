@@ -29,7 +29,6 @@ class ActiveJobTest < MiniTestSpecRails::TestCase
     refute_job MiniTest::Spec.spec_type("Widget JobXTest")
   end
 
-
   private
 
   def assert_job(actual)

@@ -6,6 +6,5 @@ module MiniTestSpecRails
 
     include MiniTestSpecRails::SharedTestCaseBehavior
 
-
   end
 end

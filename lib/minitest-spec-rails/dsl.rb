@@ -30,12 +30,12 @@ module MiniTestSpecRails
       def described_class
         nil
       end
-      
+
     end
 
     def described_class
       self.class.described_class
     end
-    
+
   end
 end
