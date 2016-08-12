@@ -17,7 +17,7 @@ module UsersControllerTests
     private
 
     def put_update_0
-      rails5? ? put(:update, :params => {:id => 0}) : put(:update, :id => 0)
+      rails5? ? put(:update, :params => { :id => 0 }) : put(:update, :id => 0)
     end
 
   end
