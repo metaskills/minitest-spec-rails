@@ -28,7 +28,6 @@ class ActionMailerTest < MiniTestSpecRails::TestCase
     refute_mailer MiniTest::Spec.spec_type("Widget MailerXTest")
   end
 
-
   private
 
   def assert_mailer(actual)

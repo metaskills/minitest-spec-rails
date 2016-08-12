@@ -36,7 +36,6 @@ class ActionControllerTest < MiniTestSpecRails::TestCase
     refute_dispatch MiniTest::Spec.spec_type("Widget IntegrationXTest")
   end
 
-
   private
 
   def assert_dispatch(actual)
