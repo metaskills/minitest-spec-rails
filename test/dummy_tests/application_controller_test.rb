@@ -50,12 +50,12 @@ class ApplicationControllerTest < ActionController::TestCase
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal  ApplicationController
+      described_class.must_equal ApplicationController
       self.class.described_class.must_equal ApplicationController
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal  ApplicationController
+        described_class.must_equal ApplicationController
         self.class.described_class.must_equal ApplicationController
       end
     end
