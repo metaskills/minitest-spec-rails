@@ -26,20 +26,20 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
 end
 
 class ActiveSupportCallbackTest < ActiveSupport::TestCase
- 
+
   setup :foo
   setup :bar
- 
+
   it 'works' do
     @foo.must_equal 'foo'
     @bar.must_equal 'bar'
   end
- 
+
   private
- 
+
   def foo ; @foo = 'foo' ; end
   def bar ; @bar = 'bar' ; end
- 
+
 end
 
 class ActiveSupportSpecTest < ActiveSupport::TestCase

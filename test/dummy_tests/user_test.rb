@@ -31,7 +31,7 @@ module UserTests
       end
 
     end
-    
+
   end
 end
 

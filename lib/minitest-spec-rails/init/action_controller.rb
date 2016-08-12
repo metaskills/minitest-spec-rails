@@ -10,7 +10,7 @@ module MiniTestSpecRails
         register_spec_type(/Controller( ?Test)?\z/, self)
         register_spec_type(self) { |desc| Class === desc && desc < self }
       end
-      
+
       module Descriptions
 
         def described_class
