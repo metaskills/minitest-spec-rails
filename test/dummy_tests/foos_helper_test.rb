@@ -1,7 +1,6 @@
 require 'test_helper_dummy'
 
 class FoosHelperTest < ActionView::TestCase
-
   it 'allows path and url helpers' do
     users_path_helper.must_equal '/users'
     users_url_helper.must_equal  'http://test.host/users'
@@ -12,6 +11,4 @@ class FoosHelperTest < ActionView::TestCase
       assert passes
     end
   end
-
 end
-

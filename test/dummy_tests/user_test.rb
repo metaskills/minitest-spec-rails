@@ -3,7 +3,6 @@ require 'test_helper_dummy'
 module UserTests
   extend ActiveSupport::Concern
   included do
-
     it 'works' do
       user_ken.must_be_instance_of User
     end
@@ -17,21 +16,16 @@ module UserTests
     end
 
     describe 'nested 1' do
-
       it('works') { skip }
 
       describe 'nested 2' do
-
         it('works') { skip }
-
       end
 
       test 'works with test' do
         user_ken.must_be_instance_of User
       end
-
     end
-
   end
 end
 

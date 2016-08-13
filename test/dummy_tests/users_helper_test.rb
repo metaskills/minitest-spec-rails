@@ -3,7 +3,6 @@ require 'test_helper_dummy'
 module UsersHelperTests
   extend ActiveSupport::Concern
   included do
-
     let(:users_list) { render_users_list User.all }
 
     before { user_ken }
@@ -18,7 +17,6 @@ module UsersHelperTests
     end
 
     describe 'nested 1' do
-
       it('works') { skip }
 
       it 'can find the helper_class' do
@@ -26,13 +24,9 @@ module UsersHelperTests
       end
 
       describe 'nested 2' do
-
         it('works') { skip }
-
       end
-
     end
-
   end
 end
 

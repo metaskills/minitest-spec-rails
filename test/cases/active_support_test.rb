@@ -3,14 +3,13 @@ require 'test_helper'
 class SomeRandomModel < ActiveRecord::Base; end
 
 class ActiveSupportTest < MiniTestSpecRails::TestCase
-
   it 'resolves spec type for active record constants' do
     assert_support MiniTest::Spec.spec_type(SomeRandomModel)
     assert_support MiniTest::Spec.spec_type(User)
   end
 
   it 'wont resolve spec type for random strings' do
-    assert_spec MiniTest::Spec.spec_type("Unmatched String")
+    assert_spec MiniTest::Spec.spec_type('Unmatched String')
   end
 
   private
@@ -22,11 +21,9 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
   def assert_spec(actual)
     assert_equal MiniTest::Spec, actual
   end
-
 end
 
 class ActiveSupportCallbackTest < ActiveSupport::TestCase
-
   setup :foo
   setup :bar
 
@@ -37,17 +34,19 @@ class ActiveSupportCallbackTest < ActiveSupport::TestCase
 
   private
 
-  def foo ; @foo = 'foo' ; end
-  def bar ; @bar = 'bar' ; end
+  def foo
+    @foo = 'foo'
+  end
 
+  def bar
+    @bar = 'bar'
+  end
 end
 
 class ActiveSupportSpecTest < ActiveSupport::TestCase
-
   it 'current spec name' do
     Thread.current[:current_spec].must_equal self
   end
-
 end
 
 class ActiveSupportDescribeNamesTest < ActiveSupport::TestCase
@@ -65,4 +64,3 @@ class ActiveSupportDescribeNamesTest < ActiveSupport::TestCase
     end
   end
 end
-

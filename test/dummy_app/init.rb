@@ -1,4 +1,4 @@
-ENV["RAILS_ENV"] ||= "test"
+ENV['RAILS_ENV'] ||= 'test'
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../../Gemfile', __FILE__)
 require 'bundler/setup'
 require 'rails/all'
@@ -6,7 +6,6 @@ Bundler.require(:default, Rails.env)
 
 module Dummy
   class Application < ::Rails::Application
-
     # Basic Engine
     config.root = File.join __FILE__, '..'
     config.cache_store = :memory_store
@@ -31,7 +30,6 @@ module Dummy
 
     # Custom
     config.minitest_spec_rails.mini_shoulda = true
-
   end
 end
 
