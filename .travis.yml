@@ -10,11 +10,13 @@ gemfile:
   - gemfiles/rails42.gemfile
   - gemfiles/rails50.gemfile
 install:
+  - gem install rubocop
   - gem install bundler
   - bundle --version
   - bundle install
 script:
   - bundle exec rake test
+  - rubocop
 matrix:
   exclude:
     - rvm: 2.0
