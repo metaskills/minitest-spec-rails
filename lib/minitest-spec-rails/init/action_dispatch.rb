@@ -5,7 +5,7 @@ module MiniTestSpecRails
 
       included do
         register_spec_type(/(Acceptance|Integration) ?Test\z/, self)
-        register_spec_type(self) { |desc| Class === desc && desc < self }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < self }
       end
     end
   end

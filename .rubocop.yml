@@ -1,0 +1,17 @@
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/Documentation:
+  Enabled: false
+
+Style/GlobalVars:
+  AllowedVariables:
+    - '$teardown_ran'
+
+Style/FileName:
+  Exclude:
+    - 'lib/minitest-spec-rails.rb'

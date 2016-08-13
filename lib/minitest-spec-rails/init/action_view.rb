@@ -6,7 +6,7 @@ module MiniTestSpecRails
       included do
         class_attribute :_helper_class
         register_spec_type(/(Helper|View)( ?Test)?\z/, self)
-        register_spec_type(self) { |desc| Class === desc && desc < self }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < self }
         extend Descriptions
       end
 

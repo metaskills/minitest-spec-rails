@@ -5,9 +5,9 @@ module MiniTestSpecRails
 
       included do
         extend Descriptions
-        register_spec_type(self) { |desc| Class === desc && desc < ActionController::Metal }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < ActionController::Metal }
         register_spec_type(/Controller( ?Test)?\z/, self)
-        register_spec_type(self) { |desc| Class === desc && desc < self }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < self }
       end
 
       module Descriptions

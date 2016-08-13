@@ -1,10 +1,13 @@
 require 'test_helper'
 
 if defined?(ActiveJob)
-  class MyJob < ActiveJob::Base; def perform(_record)
-                                   true
-                                end end
-  class TrashableCleanupJob < MyJob; end
+  class MyJob < ActiveJob::Base
+    def perform(_record)
+      true
+    end
+  end
+  class TrashableCleanupJob < MyJob
+  end
 
   class ActiveJobTest < MiniTestSpecRails::TestCase
     it 'matches spec type for class constants' do

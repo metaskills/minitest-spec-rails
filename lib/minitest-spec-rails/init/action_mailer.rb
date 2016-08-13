@@ -4,9 +4,9 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
-        register_spec_type(self) { |desc| Class === desc && desc < ActionMailer::Base }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < ActionMailer::Base }
         register_spec_type(/Mailer( ?Test)?\z/, self)
-        register_spec_type(self) { |desc| Class === desc && desc < self }
+        register_spec_type(self) { |desc| desc.is_a?(Class) && desc < self }
         extend Descriptions
       end
 
