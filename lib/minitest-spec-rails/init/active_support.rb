@@ -19,10 +19,12 @@ module MiniTestSpecRails
         end
       end
 
-      def initialize(*args)
-        Thread.current[:current_spec] = self
-        super
-      end if Minitest::VERSION < '5.3.3'
+      if Minitest::VERSION < '5.3.3'
+        def initialize(*args)
+          Thread.current[:current_spec] = self
+          super
+        end
+      end
     end
   end
 end

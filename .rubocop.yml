@@ -5,6 +5,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 15
 
+Metrics/BlockLength:
+  Exclude:
+    - 'test/dummy_tests/user_mailer_test.rb'
+
 Style/Documentation:
   Enabled: false
 
