@@ -1,7 +1,6 @@
 sudo: false
 cache: bundler
 rvm:
-  - 2.0
   - 2.1
   - 2.2.5
   - 2.3.1
@@ -9,6 +8,7 @@ gemfile:
   - gemfiles/rails41.gemfile
   - gemfiles/rails42.gemfile
   - gemfiles/rails50.gemfile
+  - gemfiles/rails51.gemfile
 install:
   - gem install rubocop
   - gem install bundler
@@ -19,7 +19,7 @@ script:
   - rubocop
 matrix:
   exclude:
-    - rvm: 2.0
-      gemfile: gemfiles/rails50.gemfile
     - rvm: 2.1
       gemfile: gemfiles/rails50.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/rails51.gemfile

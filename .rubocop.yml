@@ -19,3 +19,4 @@ Style/GlobalVars:
 Style/FileName:
   Exclude:
     - 'lib/minitest-spec-rails.rb'
+    - 'Appraisals'
