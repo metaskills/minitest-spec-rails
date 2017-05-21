@@ -35,26 +35,6 @@ group :test do
 end
 ```
 
-#### For Rails 2.3
-
-Our [2-3-stable](https://github.com/metaskills/minitest-spec-rails/tree/2-3-stable) branch tracks our 3.1 version number and is guaranteed to work on any Rails 2.3 version. Since Rails 2.3 does not have a configurable Railtie, we have enabled the [mini-shoulda](#mini_shoulda) option all the time. This means that if you are on Rails 2.3 under either Ruby 1.8 or 1.9, perhaps using Shoulda, you have a solid upgrade path! Get your tests running with minitest-spec-rails first and nothing in you test stack changes along the way!
-
-```ruby
-group :test do
-  gem 'minitest-spec-rails', '~> 3.1'
-end
-```
-
-#### Ruby 1.8 Users!!!
-
-If you are using Ruby 1.8, you must install a Test::Unit shim that subclasses MiniTest::Unit, just as Ruby 1.9 does. We have kindly packed up Ruby 1.9's `lib/test` directory in the [minitest-spec-rails-tu-shim](https://github.com/metaskills/minitest-spec-rails-tu-shim) gem. So just add this to your Gemfile.
-
-```ruby
-group :test do
-  gem 'minitest-spec-rails-tu-shim'
-end
-```
-
 
 ### How is this different than MiniTest::Rails?
 
