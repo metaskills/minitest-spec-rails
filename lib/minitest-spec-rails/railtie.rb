@@ -24,7 +24,6 @@ module MiniTestSpecRails
     initializer 'minitest-spec-rails.after.load_active_support', :after => :load_active_support, :group => :all do |app|
       if Rails.env.test?
         require 'minitest-spec-rails/init/mini_shoulda' if app.config.minitest_spec_rails.mini_shoulda
-        require 'minitest/autorun'
       end
     end
 
