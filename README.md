@@ -1,4 +1,4 @@
-<img src="http://cdn.metaskills.net/minitest-spec-rails.png" width="233" height="154" />
+<img src="https://user-images.githubusercontent.com/2381/34084174-246174da-e34a-11e7-9d36-94c9cde7b63d.png" width="233" height="154" />
 
 # Make Rails Use MiniTest::Spec!
 
