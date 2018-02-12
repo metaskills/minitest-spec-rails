@@ -213,6 +213,17 @@ describe Post do
 end
 ```
 
+Alternatively, try the [mintest-matchers_vaccine](https://github.com/rmm5t/minitest-matchers_vaccine) gem to avoid _infecting_ the objects that you want to test.
+
+```ruby
+describe User do
+  subject { User.new }
+  it "should validate email" do
+    must have_valid(:email).when("a@a.com", "foo@bar.com")
+    wont have_valid(:email).when(nil, "", "foo", "foo@bar")
+  end
+end
+```
 
 ## Gotchas
 
