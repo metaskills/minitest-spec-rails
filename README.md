@@ -5,9 +5,9 @@
 
 The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
 
-[![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.png)](http://badge.fury.io/rb/minitest-spec-rails)
-[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/metaskills/minitest-spec-rails)
+[![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.svg)](http://badge.fury.io/rb/minitest-spec-rails)
+[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.svg)](http://travis-ci.org/metaskills/minitest-spec-rails)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e67addda6fd009b68349/maintainability)](https://codeclimate.com/github/metaskills/minitest-spec-rails/maintainability)
 
 
 ## Usage
@@ -284,6 +284,4 @@ We have a few branches for each major Rails version.
 * master - Currently tracks Rails 4.1 which uses Minitest 5.0.
 
 Our current build status is:
-[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.png)](http://travis-ci.org/metaskills/minitest-spec-rails)
-
-
+[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.svg)](http://travis-ci.org/metaskills/minitest-spec-rails)
