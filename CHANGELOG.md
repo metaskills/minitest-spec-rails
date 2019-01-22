@@ -1,3 +1,7 @@
+## 5.5.0
+
+* Fix source_location of methods defined with `test`. Fixes #91. Thanks @barrettkingram
+
 ## 5.4.0
 
 * Use ENV['RAILS_ENV'] for initializer guards vs memo'ed Rails.env. Fixes #72.
