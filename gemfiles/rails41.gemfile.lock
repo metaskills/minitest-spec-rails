@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    minitest-spec-rails (5.4.0)
+    minitest-spec-rails (5.5.0)
       minitest (~> 5.0)
       rails (>= 4.1)
 
