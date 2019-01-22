@@ -22,7 +22,7 @@ module MiniTestSpecRails
       end
 
       def test(name, &block)
-        it(name) { instance_eval(&block) }
+        instance_eval { it(name, &block) }
       end
 
       def described_class

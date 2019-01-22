@@ -64,3 +64,15 @@ class ActiveSupportDescribeNamesTest < ActiveSupport::TestCase
     end
   end
 end
+
+class ActiveSupportTestSyntaxTest < ActiveSupport::TestCase
+  test 'records the correct test method line number' do
+    method_name = public_methods(false).find do |name|
+      name.to_s =~ /test.*records the correct test method line number/
+    end
+    method_obj = method(method_name)
+
+    assert_match %r{test\/cases\/active_support_test.rb}, method_obj.source_location[0]
+    assert_equal 69, method_obj.source_location[1]
+  end
+end

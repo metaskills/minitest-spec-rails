@@ -1,5 +1,5 @@
 ENV['RAILS_ENV'] ||= 'test'
-ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../../Gemfile', __FILE__)
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __dir__)
 require 'bundler/setup'
 require 'rails/all'
 Bundler.require(:default, Rails.env)
