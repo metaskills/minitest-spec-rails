@@ -6,12 +6,12 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - 2.5.x
-          - 2.6.x
-        gemfile:
-          - gemfiles/rails51.gemfile
-          - gemfiles/rails52.gemfile
-          - gemfiles/rails60.gemfile
+          - '2.5.x'
+          - '2.6.x'
+        rails:
+          - '51'
+          - '52'
+          - '60'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -24,9 +24,9 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Bundle
         env:
-          BUNDLE_GEMFILE: ${{ join('/home/runner/work/minitest-spec-rails/minitest-spec-rails', matrix.gemfile) }}
+          MTSR_RAILS_VERSION: ${{ matrix.rails }}
         run: |
-          echo $GITHUB_WORKSPACE
+          export BUNDLE_GEMFILE="${GITHUB_WORKSPACE}gemfiles/rails${MTSR_RAILS_VERSION}.gemfile"
           echo $BUNDLE_GEMFILE
           gem install bundler
           bundle install --jobs 4 --retry 3
