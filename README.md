@@ -6,7 +6,7 @@
 The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
 
 [![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.svg)](http://badge.fury.io/rb/minitest-spec-rails)
-[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.svg)](http://travis-ci.org/metaskills/minitest-spec-rails)
+[![CI Status](https://github.com/metaskills/minitest-spec-rails/workflows/CI/badge.svg)](https://launch-editor.github.com/actions?nwo=metaskills%2Fminitest-spec-rails&workflowID=CI)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e67addda6fd009b68349/maintainability)](https://codeclimate.com/github/metaskills/minitest-spec-rails/maintainability)
 
 
@@ -15,9 +15,9 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MiniTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
 
-#### Rails 4.1 or 4.2, 5.x
+#### Rails 4.1 to 6.0
 
-Our master branch is tracking rails 4.1, 4.2 and hopefully up to 5.x active development.
+Our master branch is tracking rails 5.1 up to 6.x active development.
 
 ```ruby
 group :test do
@@ -263,7 +263,7 @@ If your view helper tests give you an eror like this: `RuntimeError: In order to
 
 ## Contributing
 
-We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails). If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite.
+We run our tests on GitHub Actions. If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite.
 
 ```shell
 $ bundle install
@@ -274,7 +274,7 @@ $ bundle exec appraisal rake test
 We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `bundle exec appraisal -h` for a list. For example, the following command will run the tests for Rails 4.1 only.
 
 ```shell
-$ bundle exec appraisal rails41 rake test
+$ bundle exec appraisal rails50 rake test
 ```
 
 We have a few branches for each major Rails version.

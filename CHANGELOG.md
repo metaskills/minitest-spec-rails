@@ -1,3 +1,7 @@
+## 5.6.0
+
+* Add Rails v6 via gem spec support.
+
 ## 5.5.0
 
 * Fix source_location of methods defined with `test`. Fixes #91. Thanks @barrettkingram
