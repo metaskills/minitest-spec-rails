@@ -24,7 +24,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Bundle
         env:
-          BUNDLE_GEMFILE: ${{ join('/home/runner/work/minitest-spec-rails/minitest-spec-rails', ${{ matrix.gemfile }}) }}
+          BUNDLE_GEMFILE: ${{ join('/home/runner/work/minitest-spec-rails/minitest-spec-rails', { matrix.gemfile }) }}
         run: |
           echo $GITHUB_WORKSPACE
           echo $BUNDLE_GEMFILE
