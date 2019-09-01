@@ -24,7 +24,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Bundle
         env:
-          BUNDLE_GEMFILE: $GITHUB_WORKSPACE${{ matrix.gemfile }}
+          BUNDLE_GEMFILE: ${GITHUB_WORKSPACE}${{ matrix.gemfile }}
         run: |
           echo $BUNDLE_GEMFILE
           gem install bundler
