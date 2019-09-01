@@ -9,9 +9,9 @@ jobs:
           - '2.5.x'
           - '2.6.x'
         rails:
-          - 'rails-5.1.x'
-          - 'rails-5.2.x'
-          - 'rails-6.0.x'
+          - 'rails_5.1.x'
+          - 'rails_5.2.x'
+          - 'rails_6.0.x'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
