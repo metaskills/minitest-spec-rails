@@ -27,8 +27,8 @@ jobs:
           MTSR_RAILS_VERSION: ${{ matrix.rails }}
         run: |
           export BUNDLE_GEMFILE="${GITHUB_WORKSPACE}/gemfiles/${MTSR_RAILS_VERSION}.gemfile"
-          echo $BUNDLE_GEMFILE
-          gem install bundler
+          gem uninstall -aIx bundler
+          gem install bundler -v 1.17.3
           bundle install --jobs 4 --retry 3
       - name: Test
         run: bundle exec rake
