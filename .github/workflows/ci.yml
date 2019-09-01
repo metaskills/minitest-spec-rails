@@ -1,13 +1,13 @@
-name: CI
+name: Continuous Integration
 on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: System Pkgs
-        run: |
-          yum install sqlite-devel
+      # - name: Install Pkgs
+      #   run: |
+      #     yum install sqlite-devel
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
