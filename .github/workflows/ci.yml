@@ -1,19 +1,32 @@
-name: Continuous Integration
-on: push
+name: CI
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby:
+          - 2.5.x
+          - 2.6.x
+        gemfile:
+          - gemfiles/rails51.gemfile
+          - gemfiles/rails52.gemfile
+          - gemfiles/rails60.gemfile
     steps:
-      - uses: actions/checkout@v1
-      - name: Install Pkgs
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup System
         run: |
           sudo apt-get install libsqlite3-dev
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.5.5
+          ruby-version: ${{ matrix.ruby }}
       - name: Bundle
+        env:
+          BUNDLE_GEMFILE: $GITHUB_WORKSPACE${{ matrix.gemfile }}
         run: |
+          echo $BUNDLE_GEMFILE
           gem install bundler
           bundle install --jobs 4 --retry 3
       - name: Test

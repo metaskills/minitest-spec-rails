@@ -6,7 +6,7 @@
 The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
 
 [![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.svg)](http://badge.fury.io/rb/minitest-spec-rails)
-[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.svg)](http://travis-ci.org/metaskills/minitest-spec-rails)
+[![CI Status](https://github.com/metaskills/minitest-spec-rails/workflows/CI/badge.svg)](https://launch-editor.github.com/actions?nwo=metaskills%2Fminitest-spec-rails&workflowID=CI)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e67addda6fd009b68349/maintainability)](https://codeclimate.com/github/metaskills/minitest-spec-rails/maintainability)
 
 
@@ -263,7 +263,7 @@ If your view helper tests give you an eror like this: `RuntimeError: In order to
 
 ## Contributing
 
-We run our tests on [Travis CI](http://travis-ci.org/metaskills/minitest-spec-rails). If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite.
+We run our tests on GitHub Actions. If you detect a problem, open up a github issue or fork the repo and help out. After you fork or clone the repository, the following commands will get you up and running on the test suite.
 
 ```shell
 $ bundle install
