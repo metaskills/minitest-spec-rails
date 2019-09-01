@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,6 +26,7 @@ jobs:
         env:
           BUNDLE_GEMFILE: ${{ matrix.gemfile }}
         run: |
+          echo $GITHUB_WORKSPACE
           echo $BUNDLE_GEMFILE
           gem install bundler
           bundle install --jobs 4 --retry 3
