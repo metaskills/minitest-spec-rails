@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      # - name: Install Pkgs
-      #   run: |
-      #     yum install sqlite-devel
+      - name: Install Pkgs
+        run: |
+          apt-get install libsqlite3-dev
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
