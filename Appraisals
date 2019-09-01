@@ -1,16 +1,16 @@
 
-appraise 'rails51' do
+appraise 'rails-v5.1.x' do
   gem 'rails', '~> 5.1.0'
   # https://github.com/rails/rails/issues/29031
   gem 'minitest', '5.10.1'
 end
 
-appraise 'rails52' do
+appraise 'rails-v5.2.x' do
   gem 'rails', '~> 5.2.0'
   gem 'minitest'
 end
 
-appraise 'rails60' do
+appraise 'rails_v6.0.x' do
   gem 'rails', '~> 6.0.0'
   gem 'minitest'
 end
