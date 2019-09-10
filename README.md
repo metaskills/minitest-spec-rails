@@ -1,7 +1,7 @@
-<img src="https://user-images.githubusercontent.com/2381/34084174-246174da-e34a-11e7-9d36-94c9cde7b63d.png" width="233" height="154" />
+<a href="https://dhh.dk/2012/rails-is-omakase.html"><img src="https://user-images.githubusercontent.com/2381/34084174-246174da-e34a-11e7-9d36-94c9cde7b63d.png" width="233" height="154" /></a>
 
 # Make Rails Use MiniTest::Spec!
-
+### https://dhh.dk/2012/rails-is-omakase.html
 
 The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
 
