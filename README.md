@@ -282,6 +282,3 @@ We have a few branches for each major Rails version.
 * [2-3-stable](https://github.com/metaskills/minitest-spec-rails/tree/2-3-stable) - Tracks Rails 2.3.x with MiniTest 4.x.
 * [3-x-stable](https://github.com/metaskills/minitest-spec-rails/tree/3-x-stable) - Oddly tracks Rails 3.x and 4.0 with MiniTest 4.x.
 * master - Currently tracks Rails 4.1 which uses Minitest 5.0.
-
-Our current build status is:
-[![Build Status](https://secure.travis-ci.org/metaskills/minitest-spec-rails.svg)](http://travis-ci.org/metaskills/minitest-spec-rails)
