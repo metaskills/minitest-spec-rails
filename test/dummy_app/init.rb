@@ -10,8 +10,15 @@ module Dummy
     config.root = File.join __FILE__, '..'
     config.cache_store = :memory_store
     config.assets.enabled = false
-    config.secret_token = '012345678901234567890123456789'
+    if Rails.version > '5.0'
+      config.secret_key_base = '012345678901234567890123456789'
+    else
+      config.secret_token = '012345678901234567890123456789'
+    end
     config.active_support.test_order = :random
+    if config.active_record.sqlite3.respond_to?(:represent_boolean_as_integer)
+      config.active_record.sqlite3.represent_boolean_as_integer = true
+    end
 
     # Mimic Test Environment Config.
     config.whiny_nils = true if Rails.version < '4.0'
@@ -26,7 +33,6 @@ module Dummy
     config.dependency_loading = true
     config.preload_frameworks = true
     config.eager_load = true
-    config.secret_key_base = '012345678901234567890123456789'
 
     # Custom
     config.minitest_spec_rails.mini_shoulda = true
@@ -35,3 +41,6 @@ end
 
 Dummy::Application.initialize!
 require 'rails/test_help'
+
+# Avoids local NoMethodError: undefined method `split' for nil:NilClass
+Rails.backtrace_cleaner.remove_silencers!

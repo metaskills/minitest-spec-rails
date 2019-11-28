@@ -274,7 +274,9 @@ $ bundle exec appraisal rake test
 We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `bundle exec appraisal -h` for a list. For example, the following command will run the tests for Rails 4.1 only.
 
 ```shell
-$ bundle exec appraisal rails50 rake test
+$ bundle exec appraisal rails-v5.1.x rake test
+$ bundle exec appraisal rails-v5.2.x rake test
+$ bundle exec appraisal rails-v6.0.x rake test
 ```
 
 We have a few branches for each major Rails version.

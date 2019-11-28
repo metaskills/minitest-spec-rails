@@ -1,3 +1,11 @@
+## 6.0.1
+
+* Changed gemspec to `railties` vs `rails`. Thanks @seuros
+
+## 6.0.0
+
+* Bumping to be major with latest testing versions.
+
 ## 5.6.0
 
 * Add Rails v6 via gem spec support.
