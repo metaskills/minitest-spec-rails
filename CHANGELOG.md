@@ -1,3 +1,7 @@
+## 6.0.2
+
+* Fixed parallel tests in Rails v6.
+
 ## 6.0.1
 
 * Changed gemspec to `railties` vs `rails`. Thanks @seuros

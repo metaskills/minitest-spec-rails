@@ -7,6 +7,7 @@ module MiniTestSpecRails
       config.before_initialize do |_app|
         require 'active_support'
         require 'minitest-spec-rails/init/active_support'
+        require 'minitest-spec-rails/parallelize'
         ActiveSupport.on_load(:action_controller) do
           require 'minitest-spec-rails/init/action_controller'
           require 'minitest-spec-rails/init/action_dispatch'
