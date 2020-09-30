@@ -1,3 +1,7 @@
+## 6.0.3
+
+* Better ActionView load. Fixed #105. Thanks @zofrex
+
 ## 6.0.2
 
 * Fixed parallel tests in Rails v6.
