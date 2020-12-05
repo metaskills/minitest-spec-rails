@@ -18,7 +18,7 @@ jobs:
       - name: Setup System
         run: |
           sudo apt-get install libsqlite3-dev
-          echo "::set-env name=MTSR_RAILS_VERSION::${{ matrix.rails }}"
+          echo "MTSR_RAILS_VERSION=${{ matrix.rails }}" >> $GITHUB_ENV
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
