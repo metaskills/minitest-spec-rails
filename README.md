@@ -56,7 +56,7 @@ gem 'minitest-spec-rails'
 
 ## Test Styles
 
-This <a href="http://cheat.errtheblog.com/s/minitest">cheat sheet</a> shows both the MiniTest::Unit assertions along with the MiniTest::Spec assertion syntax. Remember, MiniTest::Spec is built on top of MiniTest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in MiniTest::Spec and are interchangeable.
+This <a href="https://chriskottom.com/freebies/cheatsheets_free.pdf">cheat sheet</a> shows both the MiniTest::Unit assertions along with the MiniTest::Spec assertion syntax. Remember, MiniTest::Spec is built on top of MiniTest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in MiniTest::Spec and are interchangeable.
 
 ```ruby
 # MiniTest::Unit Assertion Style:
