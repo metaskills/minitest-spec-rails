@@ -1,3 +1,7 @@
+## 6.0.4
+
+* Fixed parallel tests with relative paths. Thanks  @jlsherrill
+
 ## 6.0.3
 
 * Better ActionView load. Fixed #105. Thanks @zofrex
