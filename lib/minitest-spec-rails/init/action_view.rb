@@ -19,4 +19,6 @@ module MiniTestSpecRails
   end
 end
 
-ActionView::TestCase.send :include, MiniTestSpecRails::Init::ActionViewBehavior
+Rails.application.reloader.to_prepare do
+  ActionView::TestCase.send :include, MiniTestSpecRails::Init::ActionViewBehavior
+end
