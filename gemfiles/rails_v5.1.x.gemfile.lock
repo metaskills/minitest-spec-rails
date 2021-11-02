@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    minitest-spec-rails (6.0.4)
+    minitest-spec-rails (6.1.0)
       minitest (>= 5.0)
       railties (>= 4.1)
 
