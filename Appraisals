@@ -14,3 +14,9 @@ appraise 'rails_v6.0.x' do
   gem 'rails', '~> 6.0.0'
   gem 'minitest'
 end
+
+appraise 'rails_v7.0.x' do
+  gem 'rails', '~> 7.0.0.alpha2'
+  gem 'minitest'
+  gem 'view_component', require: 'view_component/engine'
+end
