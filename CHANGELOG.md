@@ -1,3 +1,7 @@
+## 6.2.0
+
+- Remove 'ENV['RAILS_ENV']=='test' from railtie.rb Fixes #114. Thanks @Qqwy
+
 ## 6.1.0
 
 - Fix Rails v7 autoloading with ViewComponent. Thanks @woller
