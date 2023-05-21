@@ -7,6 +7,9 @@ module MiniTestSpecRails
       require 'active_support'
       require 'minitest-spec-rails/init/active_support'
       require 'minitest-spec-rails/parallelize'
+      ActiveSupport.on_load(:action_cable) do
+        require 'minitest-spec-rails/init/action_cable'
+      end
       ActiveSupport.on_load(:action_controller) do
         require 'minitest-spec-rails/init/action_controller'
         require 'minitest-spec-rails/init/action_dispatch'
