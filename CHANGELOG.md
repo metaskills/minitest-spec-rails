@@ -1,3 +1,7 @@
+## 6.3.0
+
+- Add support for ActionCable::Channel::TestCase. Fixed #117. Thanks @tijn
+
 ## 6.2.0
 
 - Remove 'ENV['RAILS_ENV']=='test' from railtie.rb Fixes #114. Thanks @Qqwy
