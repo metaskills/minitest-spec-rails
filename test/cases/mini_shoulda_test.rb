@@ -14,11 +14,11 @@ class PostTests < ActiveSupport::TestCase
   end
 
   should 'setup correctly' do
-    @post.must_be_instance_of Post
+    expect(@post).must_be_instance_of Post
   end
 
   should 'teardown correctly' do
-    $teardown_ran.must_equal true
+    expect($teardown_ran).must_equal true
   end
 
   should_eventually 'will be skipped' do
@@ -27,7 +27,7 @@ class PostTests < ActiveSupport::TestCase
 
   context 'level 1' do
     should 'work' do
-      @post.must_be_instance_of Post
+      expect(@post).must_be_instance_of Post
     end
   end
 end

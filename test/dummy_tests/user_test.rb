@@ -4,11 +4,11 @@ module UserTests
   extend ActiveSupport::Concern
   included do
     it 'works' do
-      user_ken.must_be_instance_of User
+      expect(user_ken).must_be_instance_of User
     end
 
     test 'works with test' do
-      user_ken.must_be_instance_of User
+      expect(user_ken).must_be_instance_of User
     end
 
     it 'allows custom assertions' do
@@ -23,7 +23,7 @@ module UserTests
       end
 
       test 'works with test' do
-        user_ken.must_be_instance_of User
+        expect(user_ken).must_be_instance_of User
       end
     end
   end
@@ -32,18 +32,18 @@ end
 class UserTest < ActiveSupport::TestCase
   include UserTests
   it 'reflects' do
-    described_class.must_equal User
-    self.class.described_class.must_equal User
+    expect(described_class).must_equal User
+    expect(self.class.described_class).must_equal User
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal User
-      self.class.described_class.must_equal User
+      expect(described_class).must_equal User
+      expect(self.class.described_class).must_equal User
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal User
-        self.class.described_class.must_equal User
+        expect(described_class).must_equal User
+        expect(self.class.described_class).must_equal User
       end
     end
   end
@@ -52,18 +52,18 @@ end
 describe User do
   include UserTests
   it 'reflects' do
-    described_class.must_equal User
-    self.class.described_class.must_equal User
+    expect(described_class).must_equal User
+    expect(self.class.described_class).must_equal User
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal User
-      self.class.described_class.must_equal User
+      expect(described_class).must_equal User
+      expect(self.class.described_class).must_equal User
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal User
-        self.class.described_class.must_equal User
+        expect(described_class).must_equal User
+        expect(self.class.described_class).must_equal User
       end
     end
   end

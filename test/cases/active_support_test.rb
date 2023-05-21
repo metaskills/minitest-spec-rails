@@ -28,8 +28,8 @@ class ActiveSupportCallbackTest < ActiveSupport::TestCase
   setup :bar
 
   it 'works' do
-    @foo.must_equal 'foo'
-    @bar.must_equal 'bar'
+    expect(@foo).must_equal 'foo'
+    expect(@bar).must_equal 'bar'
   end
 
   private
@@ -45,7 +45,7 @@ end
 
 class ActiveSupportSpecTest < ActiveSupport::TestCase
   it 'current spec name' do
-    Thread.current[:current_spec].must_equal self
+    expect(Thread.current[:current_spec]).must_equal self
   end
 end
 

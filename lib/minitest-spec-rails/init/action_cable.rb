@@ -1,3 +1,6 @@
+require 'action_cable/channel'
+require 'action_cable/channel/test_case'
+
 module MiniTestSpecRails
   module Init
     module ActionCableBehavior

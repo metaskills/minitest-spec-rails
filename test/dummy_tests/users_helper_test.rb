@@ -9,18 +9,18 @@ module UsersHelperTests
 
     it 'works' do
       user_ken
-      users_list.must_equal "<ul><li>#{user_ken.email}</li></ul>"
+      expect(users_list).must_equal "<ul><li>#{user_ken.email}</li></ul>"
     end
 
     it 'can find the helper_class' do
-      self.class.helper_class.must_equal UsersHelper
+      expect(self.class.helper_class).must_equal UsersHelper
     end
 
     describe 'nested 1' do
       it('works') { skip }
 
       it 'can find the helper_class' do
-        self.class.helper_class.must_equal UsersHelper
+        expect(self.class.helper_class).must_equal UsersHelper
       end
 
       describe 'nested 2' do
@@ -33,18 +33,18 @@ end
 class UsersHelperTest < ActionView::TestCase
   include UsersHelperTests
   it 'reflects' do
-    described_class.must_equal UsersHelper
-    self.class.described_class.must_equal UsersHelper
+    expect(described_class).must_equal UsersHelper
+    expect(self.class.described_class).must_equal UsersHelper
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal UsersHelper
-      self.class.described_class.must_equal UsersHelper
+      expect(described_class).must_equal UsersHelper
+      expect(self.class.described_class).must_equal UsersHelper
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal UsersHelper
-        self.class.described_class.must_equal UsersHelper
+        expect(described_class).must_equal UsersHelper
+        expect(self.class.described_class).must_equal UsersHelper
       end
     end
   end
@@ -53,18 +53,18 @@ end
 describe UsersHelper do
   include UsersHelperTests
   it 'reflects' do
-    described_class.must_equal UsersHelper
-    self.class.described_class.must_equal UsersHelper
+    expect(described_class).must_equal UsersHelper
+    expect(self.class.described_class).must_equal UsersHelper
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal UsersHelper
-      self.class.described_class.must_equal UsersHelper
+      expect(described_class).must_equal UsersHelper
+      expect(self.class.described_class).must_equal UsersHelper
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal UsersHelper
-        self.class.described_class.must_equal UsersHelper
+        expect(described_class).must_equal UsersHelper
+        expect(self.class.described_class).must_equal UsersHelper
       end
     end
   end

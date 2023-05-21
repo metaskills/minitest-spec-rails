@@ -2,7 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 7.0.0"
+gem "rails", "~> 7.1.0"
 gem "minitest"
+gem "view_component", require: "view_component/engine"
 
 gemspec path: "../"

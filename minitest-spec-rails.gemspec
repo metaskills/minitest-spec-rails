@@ -19,6 +19,8 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency     'minitest', '>= 5.0'
   gem.add_runtime_dependency     'railties', '>= 4.1'
   gem.add_development_dependency 'appraisal'
+  gem.add_development_dependency 'minitest-focus'
+  gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'sqlite3'
 end

@@ -6,15 +6,16 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - '2.5.x'
-          - '2.6.x'
+          - "3.0.x"
+          - "3.1.x"
+          - "3.2.x"
         rails:
-          - 'rails_v5.1.x'
-          - 'rails_v5.2.x'
-          - 'rails_v6.0.x'
+          - "rails_v6.0.x"
+          - "rails_v6.1.x"
+          - "rails_v7.0.x"
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Setup System
         run: |
           sudo apt-get install libsqlite3-dev

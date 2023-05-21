@@ -63,7 +63,7 @@ This <a href="https://chriskottom.com/freebies/cheatsheets_free.pdf">cheat sheet
 assert_equal 100, foo
 
 # MiniTest::Spec Assertion Style:
-foo.must_equal 100
+expect(foo).must_equal 100
 ```
 
 
@@ -72,7 +72,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   let(:user_ken)   { User.create! :email => 'ken@metaskills.net' }
   it 'works' do
-    user_ken.must_be_instance_of User
+    expect(user_ken).must_be_instance_of User
   end
 end
 ```
@@ -152,9 +152,9 @@ class ActiveSupportCallbackTest < ActiveSupport::TestCase
   before { @bat = 'biz' }
 
   it 'works' do
-    @foo.must_equal 'foo'
-    @bar.must_equal 'bar'
-    @bat.must_equal 'biz'
+    expect(@foo).must_equal 'foo'
+    expect(@bar).must_equal 'bar'
+    expect(@bat).must_equal 'biz'
   end
 
   private
@@ -194,11 +194,11 @@ end
 If you prefer the assertions provided by shoulda-context like `assert_same_elements`, then you may want to consider copying them [from here](https://github.com/thoughtbot/shoulda-context/blob/master/lib/shoulda/context/assertions.rb) and including them in `MiniTest::Spec` yourself. I personally recommend just replacing these assertions with something more modern. A few examples are below.
 
 ```ruby
-assert_same_elements a, b  # From
-a.sort.must_equal b.sort   # To
+assert_same_elements a, b         # From
+expect(a.sort).must_equal b.sort  # To
 
 assert_does_not_contain a, b  # From
-a.wont_include b              # To
+expect(a).wont_include b      # To
 ```
 
 ### Matchers
@@ -274,9 +274,9 @@ $ bundle exec appraisal rake test
 We use the [appraisal](https://github.com/thoughtbot/appraisal) gem from Thoughtbot to help us generate the individual gemfiles for each Rails version and to run the tests locally against each generated Gemfile. The `rake appraisal test` command actually runs our test suite against all Rails versions in our `Appraisal` file. If you want to run the tests for a specific Rails version, use `bundle exec appraisal -h` for a list. For example, the following command will run the tests for Rails 4.1 only.
 
 ```shell
-$ bundle exec appraisal rails-v5.1.x rake test
-$ bundle exec appraisal rails-v5.2.x rake test
-$ bundle exec appraisal rails-v6.0.x rake test
+$ bundle exec appraisal rails_v6.0.x rake test
+$ bundle exec appraisal rails_v6.1.x rake test
+$ bundle exec appraisal rails_v7.0.x rake test
 ```
 
 We have a few branches for each major Rails version.

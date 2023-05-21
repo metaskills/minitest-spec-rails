@@ -7,18 +7,17 @@ module UserMailerTests
     let(:user_mailer_class) { UserMailer }
     let(:user_email)        do
       user_mailer_class.welcome(user_ken).tap do |mail|
-        laterable = Rails.version > '4.2' || Rails.version.starts_with?('4.2')
-        laterable ? mail.deliver_now : mail.deliver
+        mail.deliver_now
       end
     end
 
     it 'works' do
-      deliveries.must_be :empty?
+      expect(deliveries).must_be :empty?
       user_email
-      deliveries.wont_be :empty?
-      user_email.to.must_equal    [user_ken.email]
-      user_email.from.must_equal  ['rails@minitest.spec']
-      user_email.body.encoded.must_equal "Welcome to MiniTest::Spec #{user_ken.email}!"
+      expect(deliveries).wont_be :empty?
+      expect(user_email.to).must_equal    [user_ken.email]
+      expect(user_email.from).must_equal  ['rails@minitest.spec']
+      expect(user_email.body.encoded).must_equal "Welcome to MiniTest::Spec #{user_ken.email}!"
     end
 
     it 'allows custom assertions' do
@@ -26,14 +25,14 @@ module UserMailerTests
     end
 
     it 'can find the mailer_class' do
-      self.class.mailer_class.must_equal user_mailer_class
+      expect(self.class.mailer_class).must_equal user_mailer_class
     end
 
     describe 'nested 1' do
       it('works') { skip }
 
       it 'can find the mailer_class' do
-        self.class.mailer_class.must_equal user_mailer_class
+        expect(self.class.mailer_class).must_equal user_mailer_class
       end
 
       describe 'nested 2' do
@@ -46,18 +45,18 @@ end
 class UserMailerTest < ActionMailer::TestCase
   include UserMailerTests
   it 'reflects' do
-    described_class.must_equal UserMailer
-    self.class.described_class.must_equal UserMailer
+    expect(described_class).must_equal UserMailer
+    expect(self.class.described_class).must_equal UserMailer
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal UserMailer
-      self.class.described_class.must_equal UserMailer
+      expect(described_class).must_equal UserMailer
+      expect(self.class.described_class).must_equal UserMailer
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal UserMailer
-        self.class.described_class.must_equal UserMailer
+        expect(described_class).must_equal UserMailer
+        expect(self.class.described_class).must_equal UserMailer
       end
     end
   end
@@ -66,18 +65,18 @@ end
 describe UserMailer do
   include UserMailerTests
   it 'reflects' do
-    described_class.must_equal UserMailer
-    self.class.described_class.must_equal UserMailer
+    expect(described_class).must_equal UserMailer
+    expect(self.class.described_class).must_equal UserMailer
   end
   describe 'level 1' do
     it 'reflects' do
-      described_class.must_equal UserMailer
-      self.class.described_class.must_equal UserMailer
+      expect(described_class).must_equal UserMailer
+      expect(self.class.described_class).must_equal UserMailer
     end
     describe 'level 2' do
       it 'reflects' do
-        described_class.must_equal UserMailer
-        self.class.described_class.must_equal UserMailer
+        expect(described_class).must_equal UserMailer
+        expect(self.class.described_class).must_equal UserMailer
       end
     end
   end

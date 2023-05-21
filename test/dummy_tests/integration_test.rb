@@ -7,7 +7,7 @@ module IntegrationTests
 
     it 'works' do
       get root_path
-      status.must_equal 200
+      expect(status).must_equal 200
     end
 
     it 'works with assert_routing' do
@@ -15,14 +15,14 @@ module IntegrationTests
     end
 
     it 'can find the app' do
-      app.must_be_instance_of Dummy::Application
+      expect(app).must_be_instance_of Dummy::Application
     end
 
     describe 'nested 1' do
       it('works') { skip }
 
       it 'can find the app' do
-        app.must_be_instance_of Dummy::Application
+        expect(app).must_be_instance_of Dummy::Application
       end
 
       describe 'nested 2' do

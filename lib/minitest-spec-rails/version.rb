@@ -1,3 +1,3 @@
 module MiniTestSpecRails
-  VERSION = '6.3.0'.freeze
+  VERSION = '7.0.0'.freeze
 end

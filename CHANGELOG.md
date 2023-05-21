@@ -1,6 +1,9 @@
-## 6.3.0
+## 7.0.0
 
 - Add support for ActionCable::Channel::TestCase. Fixed #117. Thanks @tijn
+- Remove automated tests for Rails v5 and Ruby v2.
+- Update all of our tests and examples to use non-global expectations.
+- Remove `Rails.application.reloader.to_prepare` for `ActionViewBehavior`.
 
 ## 6.2.0
 
