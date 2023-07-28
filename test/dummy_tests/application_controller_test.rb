@@ -7,11 +7,11 @@ module ApplicationControllerTests
 
     it 'works' do
       get :index
-      expect(response.body).must_equal '<h1>Rendered MiniTest::Spec</h1>'
+      expect(response.body).must_equal '<h1>Rendered Minitest::Spec</h1>'
     end
 
     it 'allows custom assertions' do
-      assert_select 'h1', text: 'Rendered MiniTest::Spec'
+      assert_select 'h1', text: 'Rendered Minitest::Spec'
     end
 
     it 'can find the controller_class' do

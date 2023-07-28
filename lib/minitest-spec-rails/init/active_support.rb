@@ -4,7 +4,7 @@ module MiniTestSpecRails
       extend ActiveSupport::Concern
 
       included do
-        extend MiniTest::Spec::DSL
+        extend Minitest::Spec::DSL
         include MiniTestSpecRails::DSL
         include ActiveSupport::Testing::ConstantLookup
         extend Descriptions

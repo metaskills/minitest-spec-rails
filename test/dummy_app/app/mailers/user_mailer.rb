@@ -3,6 +3,6 @@ class UserMailer < ActionMailer::Base
 
   def welcome(user)
     @user = user
-    mail to: @user.email, subject: 'Welcome', body: "Welcome to MiniTest::Spec #{@user.email}!"
+    mail to: @user.email, subject: 'Welcome', body: "Welcome to Minitest::Spec #{@user.email}!"
   end
 end

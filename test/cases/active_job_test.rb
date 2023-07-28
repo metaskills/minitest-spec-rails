@@ -11,26 +11,26 @@ if defined?(ActiveJob)
 
   class ActiveJobTest < MiniTestSpecRails::TestCase
     it 'matches spec type for class constants' do
-      assert_job MiniTest::Spec.spec_type(MyJob)
-      assert_job MiniTest::Spec.spec_type(TrashableCleanupJob)
+      assert_job Minitest::Spec.spec_type(MyJob)
+      assert_job Minitest::Spec.spec_type(TrashableCleanupJob)
     end
 
     it 'matches spec type for strings' do
-      assert_job MiniTest::Spec.spec_type('WidgetJob')
-      assert_job MiniTest::Spec.spec_type('WidgetJobTest')
-      assert_job MiniTest::Spec.spec_type('Widget Job Test')
+      assert_job Minitest::Spec.spec_type('WidgetJob')
+      assert_job Minitest::Spec.spec_type('WidgetJobTest')
+      assert_job Minitest::Spec.spec_type('Widget Job Test')
       # And is case sensitive
-      refute_job MiniTest::Spec.spec_type('widgetmailer')
-      refute_job MiniTest::Spec.spec_type('widgetmailertest')
-      refute_job MiniTest::Spec.spec_type('widget mailer test')
+      refute_job Minitest::Spec.spec_type('widgetmailer')
+      refute_job Minitest::Spec.spec_type('widgetmailertest')
+      refute_job Minitest::Spec.spec_type('widget mailer test')
     end
 
     it 'wont match spec type for non space characters' do
-      refute_job MiniTest::Spec.spec_type("Widget Job\tTest")
-      refute_job MiniTest::Spec.spec_type("Widget Job\rTest")
-      refute_job MiniTest::Spec.spec_type("Widget Job\nTest")
-      refute_job MiniTest::Spec.spec_type("Widget Job\fTest")
-      refute_job MiniTest::Spec.spec_type('Widget JobXTest')
+      refute_job Minitest::Spec.spec_type("Widget Job\tTest")
+      refute_job Minitest::Spec.spec_type("Widget Job\rTest")
+      refute_job Minitest::Spec.spec_type("Widget Job\nTest")
+      refute_job Minitest::Spec.spec_type("Widget Job\fTest")
+      refute_job Minitest::Spec.spec_type('Widget JobXTest')
     end
 
     private

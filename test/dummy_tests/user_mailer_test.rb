@@ -17,7 +17,7 @@ module UserMailerTests
       expect(deliveries).wont_be :empty?
       expect(user_email.to).must_equal    [user_ken.email]
       expect(user_email.from).must_equal  ['rails@minitest.spec']
-      expect(user_email.body.encoded).must_equal "Welcome to MiniTest::Spec #{user_ken.email}!"
+      expect(user_email.body.encoded).must_equal "Welcome to Minitest::Spec #{user_ken.email}!"
     end
 
     it 'allows custom assertions' do
