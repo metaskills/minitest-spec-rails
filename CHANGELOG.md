@@ -1,3 +1,9 @@
+## 7.1.0
+
+- Use Minitest instead of MiniTest. Fixes #119. Thanks @evgeni
+- Fix ActionCable::Channel::TestCase support. Fixes #118. Thanks @marcoroth
+- Add support for ActionCable::Channel::TestCase. Fixes #117. Thanks @tijn
+
 ## 7.0.0
 
 - Add support for ActionCable::Channel::TestCase. Fixed #117. Thanks @tijn

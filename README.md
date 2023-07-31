@@ -38,7 +38,7 @@ end
 
 ### How is this different than Minitest::Rails?
 
-To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE Minitest::Spec. Both projects aim to advocate MiniTest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?
+To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE Minitest::Spec. Both projects aim to advocate Minitest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?
 
   * We aim to leverage existing Rails test directories and files!
   * No special test helper and/or generators.
@@ -229,14 +229,14 @@ end
 
 ### Assertion Methods
 
-If you are upgrading from Test::Unit, there are a few missing assertions that have been renamed or are no longer available within MiniTest.
+If you are upgrading from Test::Unit, there are a few missing assertions that have been renamed or are no longer available within Minitest.
 
 * The method `assert_raise` is renamed `assert_raises`.
 * There is no method `assert_nothing_raised`. There are good reasons for this on [Ryan's blog entry](http://blog.zenspider.com/blog/2012/01/assert_nothing_tested.html).
 
 ### Mocha
 
-If you are using [Mocha](https://github.com/freerange/mocha) for mocking and stubbing, please update to the latest, 0.13.1 or higher so it is compatible with the latest MiniTest. If you do not like the deprecation warnings in older versions of Rails, just add this below the `require 'rails/all'` within your `application.rb` file :)
+If you are using [Mocha](https://github.com/freerange/mocha) for mocking and stubbing, please update to the latest, 0.13.1 or higher so it is compatible with the latest Minitest. If you do not like the deprecation warnings in older versions of Rails, just add this below the `require 'rails/all'` within your `application.rb` file :)
 
 ```ruby
 require 'mocha/deprecation'
