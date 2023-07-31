@@ -1,4 +1,7 @@
-require 'action_cable/channel'
+unless defined?(ActionCable::Channel)
+  require 'action_cable/channel'
+end
+
 require 'action_cable/channel/test_case'
 
 module MiniTestSpecRails
