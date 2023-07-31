@@ -1,9 +1,9 @@
 <a href="https://dhh.dk/2012/rails-is-omakase.html"><img src="https://user-images.githubusercontent.com/2381/34084174-246174da-e34a-11e7-9d36-94c9cde7b63d.png" width="233" height="154" /></a>
 
-# Make Rails Use MiniTest::Spec!
+# Make Rails Use Minitest::Spec!
 ##### https://dhh.dk/2012/rails-is-omakase.html
 
-The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the MiniTest::Spec::DSL.
+The minitest-spec-rails gem makes it easy to use the Minitest::Spec DSL within your existing Rails 2.3, 3.x or 4.x test suite. It does this by forcing ActiveSupport::TestCase to utilize the Minitest::Spec::DSL.
 
 [![Gem Version](https://badge.fury.io/rb/minitest-spec-rails.svg)](http://badge.fury.io/rb/minitest-spec-rails)
 [![CI Status](https://github.com/metaskills/minitest-spec-rails/workflows/CI/badge.svg)](https://launch-editor.github.com/actions?nwo=metaskills%2Fminitest-spec-rails&workflowID=CI)
@@ -12,7 +12,7 @@ The minitest-spec-rails gem makes it easy to use the MiniTest::Spec DSL within y
 
 ## Usage
 
-Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since MiniTest::Spec is built on top of MiniTest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
+Existing or new Rails applications that use the default Rails testing structure can simply drop in the minitest-spec-gem and start writing their tests in the new spec DSL. Since Minitest::Spec is built on top of Minitest::Unit, a replacement for Test::Unit, all of your existing tests will continue to work.
 
 
 #### Rails 4.1 to 6.0
@@ -36,9 +36,9 @@ end
 ```
 
 
-### How is this different than MiniTest::Rails?
+### How is this different than Minitest::Rails?
 
-To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE MiniTest::Spec. Both projects aim to advocate MiniTest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?
+To start off both Mike Moore (@blowmage) and I have worked together and we both LOVE Minitest::Spec. Both projects aim to advocate MiniTest and make Rails integration as easy as possible. However, there are a few key differences in our projects. Some of these differences may go away in time too. As always, choose the tool you think fits your needs. So how, is minitest-spec-rails different than [minitest-rails](https://github.com/blowmage/minitest-rails)?
 
   * We aim to leverage existing Rails test directories and files!
   * No special test helper and/or generators.
@@ -47,7 +47,7 @@ To start off both Mike Moore (@blowmage) and I have worked together and we both 
   * Fully support Ruby 1.8.7 with all legacy Test::Unit behavior.
   * Compatibility with ActiveSupport::TestCase's setup and teardowns.
 
-So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support MiniTest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
+So the goal of this project is to make Rails 3 or 4 applications just work as if rails-core had decided to support Minitest::Spec all along. We believe that eventually that day will come and when it does, all your tests will still work! So bundle up and get started!
 
 ```ruby
 gem 'minitest-spec-rails'
@@ -56,13 +56,13 @@ gem 'minitest-spec-rails'
 
 ## Test Styles
 
-This <a href="https://chriskottom.com/freebies/cheatsheets_free.pdf">cheat sheet</a> shows both the MiniTest::Unit assertions along with the MiniTest::Spec assertion syntax. Remember, MiniTest::Spec is built on top of MiniTest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in MiniTest::Spec and are interchangeable.
+This <a href="https://chriskottom.com/freebies/cheatsheets_free.pdf">cheat sheet</a> shows both the Minitest::Unit assertions along with the Minitest::Spec assertion syntax. Remember, Minitest::Spec is built on top of Minitest::Unit which is a Test::Unit replacement. That means you can mix and match styles as you upgrade from Test::Unit to a more modern style. For example, both of these would work in Minitest::Spec and are interchangeable.
 
 ```ruby
-# MiniTest::Unit Assertion Style:
+# Minitest::Unit Assertion Style:
 assert_equal 100, foo
 
-# MiniTest::Spec Assertion Style:
+# Minitest::Spec Assertion Style:
 expect(foo).must_equal 100
 ```
 
@@ -191,7 +191,7 @@ class PostTests < ActiveSupport::TestCase
 end
 ```
 
-If you prefer the assertions provided by shoulda-context like `assert_same_elements`, then you may want to consider copying them [from here](https://github.com/thoughtbot/shoulda-context/blob/master/lib/shoulda/context/assertions.rb) and including them in `MiniTest::Spec` yourself. I personally recommend just replacing these assertions with something more modern. A few examples are below.
+If you prefer the assertions provided by shoulda-context like `assert_same_elements`, then you may want to consider copying them [from here](https://github.com/thoughtbot/shoulda-context/blob/master/lib/shoulda/context/assertions.rb) and including them in `Minitest::Spec` yourself. I personally recommend just replacing these assertions with something more modern. A few examples are below.
 
 ```ruby
 assert_same_elements a, b         # From
@@ -203,7 +203,7 @@ expect(a).wont_include b      # To
 
 ### Matchers
 
-**I highly suggest that you stay away from matchers** since MiniTest::Spec gives you all the tools you need to write good tests. Staying away from matchers will make your code's tests live longer. So my advice is to stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are really your thing, I recommend the [minitest-matchers](https://github.com/wojtekmach/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
+**I highly suggest that you stay away from matchers** since Minitest::Spec gives you all the tools you need to write good tests. Staying away from matchers will make your code's tests live longer. So my advice is to stay away from things like `.should ==` and just write `.must_equal` instead. However, if matchers are really your thing, I recommend the [minitest-matchers](https://github.com/wojtekmach/minitest-matchers) gem. You can also check out the [valid_attribute](https://github.com/bcardarella/valid_attribute) gem built on top of minitest-matchers.
 
 ```ruby
 describe Post do
