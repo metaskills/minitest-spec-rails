@@ -23,8 +23,10 @@ module MiniTestSpecRails
     end
 
     initializer 'minitest-spec-rails.action_view', after: 'action_view.setup_action_pack', group: :all do |_app|
-      ActiveSupport.on_load(:action_view) do
-        require 'minitest-spec-rails/init/action_view'
+      Rails.application.config.to_prepare do
+        ActiveSupport.on_load(:action_view) do
+          require 'minitest-spec-rails/init/action_view'
+        end
       end
     end
 
