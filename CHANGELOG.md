@@ -1,3 +1,7 @@
+## 7.2.0
+
+- Wrap action_view init in config.to_prepare block. Fixes #122. Thanks @Hal-Sumi
+
 ## 7.1.0
 
 - Use Minitest instead of MiniTest. Fixes #119. Thanks @evgeni
