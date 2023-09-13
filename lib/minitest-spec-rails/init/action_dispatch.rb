@@ -11,4 +11,4 @@ module MiniTestSpecRails
   end
 end
 
-ActionDispatch::IntegrationTest.send :include, MiniTestSpecRails::Init::ActionDispatchBehavior
+ActionDispatch::IntegrationTest.include MiniTestSpecRails::Init::ActionDispatchBehavior

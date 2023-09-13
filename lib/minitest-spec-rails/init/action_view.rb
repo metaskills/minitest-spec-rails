@@ -19,4 +19,4 @@ module MiniTestSpecRails
   end
 end
 
-ActionView::TestCase.send :include, MiniTestSpecRails::Init::ActionViewBehavior
+ActionView::TestCase.include MiniTestSpecRails::Init::ActionViewBehavior

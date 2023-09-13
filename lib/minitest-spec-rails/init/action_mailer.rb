@@ -19,4 +19,4 @@ module MiniTestSpecRails
   end
 end
 
-ActionMailer::TestCase.send :include, MiniTestSpecRails::Init::ActionMailerBehavior
+ActionMailer::TestCase.include MiniTestSpecRails::Init::ActionMailerBehavior
