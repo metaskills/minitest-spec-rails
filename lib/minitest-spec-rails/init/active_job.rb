@@ -21,4 +21,4 @@ module MiniTestSpecRails
   end
 end
 
-ActiveJob::TestCase.send :include, MiniTestSpecRails::Init::ActiveJobBehavior
+ActiveJob::TestCase.include MiniTestSpecRails::Init::ActiveJobBehavior

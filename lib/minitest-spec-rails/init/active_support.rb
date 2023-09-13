@@ -29,4 +29,4 @@ module MiniTestSpecRails
   end
 end
 
-ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::ActiveSupportBehavior
+ActiveSupport::TestCase.include MiniTestSpecRails::Init::ActiveSupportBehavior
