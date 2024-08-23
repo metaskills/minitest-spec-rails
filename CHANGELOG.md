@@ -1,3 +1,7 @@
+## Unreleased
+
+- Fix require `action_cable/channel/test_case` errors with Rails 5.x. Fixes #124
+
 ## 7.2.0
 
 - Wrap action_view init in config.to_prepare block. Fixes #122. Thanks @Hal-Sumi
