@@ -8,7 +8,7 @@ module MiniTestSpecRails
         include MiniTestSpecRails::DSL
         include ActiveSupport::Testing::ConstantLookup
         extend Descriptions
-        register_spec_type(self) { |desc| desc.is_a?(Class) }
+        register_spec_type(self) { |_desc| true }
       end
 
       module Descriptions
