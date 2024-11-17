@@ -1,3 +1,7 @@
+## 7.4.0
+
+- Fix require `action_cable/channel/test_case` errors with Rails 5.x. Fixes #124
+
 ## 7.3.0
 
 - Fix require `action_cable/channel/test_case` errors with Rails 5.x. Fixes #124
