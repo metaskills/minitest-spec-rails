@@ -19,7 +19,7 @@ class ActiveSupportTest < MiniTestSpecRails::TestCase
   end
 
   def assert_spec(actual)
-    assert_equal Minitest::Spec, actual
+    assert_equal ActiveSupport::TestCase, actual
   end
 end
 
