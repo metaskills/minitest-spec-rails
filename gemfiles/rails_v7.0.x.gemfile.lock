@@ -159,6 +159,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-23
 
 DEPENDENCIES
   appraisal
@@ -166,7 +167,7 @@ DEPENDENCIES
   minitest-focus
   minitest-spec-rails!
   pry
-  rails (~> 7.1.0)
+  rails (~> 7.0.0)
   rake
   sqlite3
 
